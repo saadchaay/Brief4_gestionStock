@@ -1,0 +1,163 @@
+// mobile ...
+@media screen and(min-width: 350px) and (max-width: 690px){
+    
+    section.sec-direction {
+        margin: 0;
+        .container {
+            margin: 0 15px;
+            display: flex;
+            justify-content: flex-start;
+            .path-direction {
+                flex: 3;
+                margin: 0;
+                .iconify {
+                    width: 20px;
+                    height: 20px;
+                }
+                ul {
+                    padding: 0;
+                    display: flex;
+                    list-style: none;
+                    li {
+                        margin-left: .8em;
+                    }
+                    a{
+                        font-size: .7em;
+                        text-decoration: none;
+                        color: $secondary-color;
+                        &:link {
+                            color: $primary-color;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .add-product-cta {
+                flex: 1;
+                padding: .5em 0em;
+                button {
+                    width: 100%;
+                }
+                .iconify {
+                    width: 20px;
+                    height: 20px;
+                }
+                p {
+                    display: inline;
+                    text-align: center;
+                    font-size: .9em;
+                    white-space: nowrap;
+                }
+            }
+        }
+        
+    }
+}
+
+// medium desktop ...
+@media screen and(min-width: 691px) and (max-width: 950px){
+    section.sec-direction {
+        margin: 0;
+        .container {
+            margin: 0 15px;
+            display: flex;
+            justify-content: flex-start;
+            .path-direction {
+                flex: 2;
+                margin: 0;
+                .iconify {
+                    width: 20px;
+                    height: 20px;
+                }
+                ul {
+                    padding: 0;
+                    display: flex;
+                    list-style: none;
+                    li {
+                        margin-left: 1em;
+                    }
+                    a{
+                        font-size: .8em;
+                        text-decoration: none;
+                        color: $secondary-color;
+                        &:link {
+                            color: $primary-color;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .add-product-cta {
+                flex: 3;
+                padding: .5em .9em;
+                .iconify {
+                    width: 20px;
+                    height: 20px;
+                }
+                p {
+                    display: inline;
+                    text-align: center;
+                }
+            }
+        }
+        
+    }
+}
+
+// large Desktop
+@media screen and(min-width: 951px) and (max-width: 1920px){
+    section.sec-direction {
+        margin: 0;
+        .container {
+            margin: 0 15px;
+            display: flex;
+            justify-content: flex-start;
+            .path-direction {
+                flex: 2;
+                margin: 0;
+                .iconify {
+                    width: 20px;
+                    height: 20px;
+                }
+                ul {
+                    padding: 0;
+                    display: flex;
+                    list-style: none;
+                    li {
+                        margin-left: .8em;
+                    }
+                    a{
+                        font-size: .9em;
+                        text-decoration: none;
+                        color: $secondary-color;
+                        &:link {
+                            color: $primary-color;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .add-product-cta {
+                flex: 4;
+                padding: .5em .9em;
+                height: 34px;
+                align-items: flex-end;
+                .iconify {
+                    width: 20px;
+                    height: 20px;
+                }
+                p {
+                    display: inline;
+                    text-align: center;
+                }
+            }
+        }
+        
+    }
+}

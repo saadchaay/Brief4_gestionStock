@@ -1,0 +1,19 @@
+@mixin content-item() {
+    
+}
+
+@mixin form-search($type_display) {
+    form {
+        width: 100%;
+        display: $type_display;
+        border: 1.5px solid #E5E5E5;
+        border-radius: 20px;
+        padding: .3em .1em;
+        background-color: #E5E5E5;
+        justify-content: space-between;
+        input {
+            border: none;
+            background-color: #E5E5E5;
+        }
+    }
+}
