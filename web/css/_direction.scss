@@ -39,16 +39,22 @@
                 padding: .5em 0em;
                 button {
                     width: 100%;
+                    background-color: #FF6600;
+                    border: 2px solid #FF6600;
+                    border-radius: 4px;
                 }
                 .iconify {
                     width: 20px;
                     height: 20px;
+                    color: white;
                 }
                 p {
                     display: inline;
                     text-align: center;
                     font-size: .9em;
                     white-space: nowrap;
+                    color: white;
+                    font-weight: bold;
                 }
             }
         }
@@ -61,7 +67,7 @@
     section.sec-direction {
         margin: 0;
         .container {
-            margin: 0 15px;
+            margin: 0 45px;
             display: flex;
             justify-content: flex-start;
             .path-direction {
@@ -94,13 +100,24 @@
             .add-product-cta {
                 flex: 3;
                 padding: .5em .9em;
+                button {
+                    width: 130px;
+                    background-color: #FF6600;
+                    border: 4px solid #FF6600;
+                    border-radius: 4px;
+                }
                 .iconify {
                     width: 20px;
                     height: 20px;
+                    color: white;
                 }
                 p {
                     display: inline;
                     text-align: center;
+                    font-size: .9em;
+                    white-space: nowrap;
+                    color: white;
+                    font-weight: bold;
                 }
             }
         }
@@ -113,7 +130,7 @@
     section.sec-direction {
         margin: 0;
         .container {
-            margin: 0 15px;
+            margin: 0 55px;
             display: flex;
             justify-content: flex-start;
             .path-direction {
@@ -146,15 +163,25 @@
             .add-product-cta {
                 flex: 4;
                 padding: .5em .9em;
-                height: 34px;
-                align-items: flex-end;
+                button {
+                    width: 150px;
+                    background-color: #FF6600;
+                    border: 4px solid #FF6600;
+                    border-radius: 4px;
+                }
                 .iconify {
                     width: 20px;
                     height: 20px;
+                    color: white;
                 }
                 p {
                     display: inline;
                     text-align: center;
+                    
+                    font-size: .9em;
+                    white-space: nowrap;
+                    color: white;
+                    font-weight: bold;
                 }
             }
         }

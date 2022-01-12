@@ -1,0 +1,83 @@
+@import "variable" ;
+@import "mixins" ;
+@import "header" ;
+@import "direction" ;
+
+// mobile ...
+@media screen and(min-width: 350px) and (max-width: 640px){
+    section {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .top-side {
+                @include box-top(1em,1.2em,1em);
+            }
+            .bottom-side {
+                @include box-bottom(1em,1.2em,column);
+                div {
+                    margin: 1em 0em;
+                }
+                .product-info {
+                    @include product_info(1em,0);
+                }
+                .product-desc {
+                    @include product_desc(1em)
+                }
+            }
+        }
+    }
+}
+
+// medium desktop ...
+@media screen and(min-width: 641px) and (max-width: 950px){
+    section {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .top-side {
+                @include box-top(1.3em,1.3em,1.3em);
+            }
+            .bottom-side {
+                justify-content: space-between;
+                @include box-bottom(1em,0em,row);
+                div {
+                    margin: 0em 1.4em;
+                }
+                .product-info {
+                    @include product_info(1.2em,0em);
+                }
+                .product-desc {
+                    @include product_desc(1.2em)
+                }
+            }
+        }
+    }
+}
+
+// large Desktop
+@media screen and(min-width: 951px) and (max-width: 1920px){
+    section {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .top-side {
+                @include box-top(2em,3em,1.5em);
+            }
+            .bottom-side {
+                @include box-bottom(1em,1.5em,row);
+                div {
+                    margin: 1em 1.5em;
+                }
+                .product-info {
+                    @include product_info(1em,12em);
+                }
+                .product-desc {
+                    @include product_desc(1em)
+                }
+            }
+        }
+    }
+}

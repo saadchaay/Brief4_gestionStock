@@ -59,11 +59,12 @@
         .navbar {
             width: 65%;
             box-shadow: 1px 6px 6px #E5E5E5;
-            height: 100vh;
+            height: 100%;
             position: absolute;
             left: 0;
             top: 50px;
             z-index: 999;
+            background-color: white;
             //TODO:: transition navbar...
             nav {
                 ul {
@@ -75,7 +76,7 @@
                     }
                     a {
                         text-decoration: none;
-                        color: $primary-color;
+                        color: $secondary-color;
                         p {
                             display: inline;
                             margin-left: 1em;
@@ -84,14 +85,12 @@
                         .iconify {
                             width: 25px;
                             height: 25px;
-                            color: $primary-color;
-                        }
-                        &:link {
                             color: $secondary-color;
+                        }
+                        &:hover {
+                            color: $primary-color;
                             .iconify {
-                                width: 25px;
-                                height: 25px;
-                                color: $secondary-color;
+                                color: $primary-color;
                             }
                         }
                     }
@@ -121,7 +120,7 @@
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
-                margin: 6px 15px;
+                margin: 6px 40px;
                 .left-side {
                     flex: 1;
                     display: flex;
@@ -183,12 +182,13 @@
                             }
                             a {
                                 text-decoration: none;
-                                color: $primary-color;
+                                color: $secondary-color;
                                 p {
                                     display: inline;
                                     margin-left: 0em;
                                     font-size: .8em;
                                     font-weight: bold;
+                                    white-space: nowrap;
                                 }
                                 .iconify {
                                     display: none;
@@ -196,12 +196,10 @@
                                     height: 25px;
                                     color: $primary-color;
                                 }
-                                &:link {
-                                    color: $secondary-color;
+                                &:hover {
+                                    color: $primary-color;
                                     .iconify {
-                                        width: 25px;
-                                        height: 25px;
-                                        color: $secondary-color;
+                                        color: $primary-color;
                                     }
                                 }
                             }
@@ -236,7 +234,7 @@
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
-                margin: 6px 20px;
+                margin: 6px 50px;
                 .left-side {
                     flex: 1;
                     display: flex;
@@ -297,26 +295,25 @@
                                 display: none;
                             }
                             a {
-                                color: $primary-color;
+                                color: $secondary-color;
                                 text-decoration: none;
                                 p {
                                     display: inline;
                                     margin-left: .7em;
                                     font-size: .8em;
                                     font-weight: bold;
+                                    white-space: nowrap;
                                 }
                                 .iconify {
                                     display: none;
                                     width: 25px;
                                     height: 25px;
-                                    color: $primary-color;
-                                }
-                                &:link {
                                     color: $secondary-color;
+                                }
+                                &:hover {
+                                    color: $primary-color;
                                     .iconify {
-                                        width: 25px;
-                                        height: 25px;
-                                        color: $secondary-color;
+                                        color: $primary-color;
                                     }
                                 }
                             }

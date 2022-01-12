@@ -1,0 +1,43 @@
+@import "variable" ;
+@import "mixins" ;
+@import "header" ;
+@import "direction" ;
+
+// mobile ...
+@media screen and(min-width: 350px) and (max-width: 640px){
+    section.items {
+        margin: .3em 15px;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1em;
+            @include content-item(column,row,column,115px,65px, auto, 60%);
+        }
+    }
+}
+
+// medium desktop ...
+@media screen and(min-width: 641px) and (max-width: 950px){
+    section.items {
+        margin: .3em 15px;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            @include content-item(column,column,row,100%,130px,230px,30%);
+        }
+    }
+}
+
+// large Desktop
+@media screen and(min-width: 951px) and (max-width: 1920px){
+    section.items {
+        margin: .3em 15px;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            @include content-item(column,column,row,100%,130px,230px,30%);
+        }
+    }
+}

@@ -1,5 +1,74 @@
-@mixin content-item() {
-    
+@mixin content-item($type_1,$type_2,$type_3,$I_width,$I_height,$item_wd,$cta_) {
+    .item {
+        display: flex;
+        flex-direction: $type_1;
+        box-shadow: 2px 4px 7px gray;
+        border-radius: 10px;
+        width: $item_wd;
+        margin: .7em;
+        .top-side {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: $type_2;
+            margin-top: 0;
+            img {
+                flex: 1;
+                border-radius: 10px;
+                width: $I_width;
+                height: $I_height;
+            }
+            div {
+                flex: 1;
+                margin: .5em;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: $type_3;
+                h4 {
+                    font-size: .9em;
+                    margin: 0;
+                    white-space: nowrap;
+                    color: $secondary-color;
+                }
+                p {
+                    margin: 0;
+                    white-space: nowrap;
+                    font-size: .83em;
+                    color: gray;
+                }
+                span {
+                    color: $primary-color;
+                    font-weight: bold;
+                }
+                .stock-status {
+                    color: white;
+                    font-size: .8em;
+                    padding: .2em .5em;
+                    border-radius: 4px;
+                    width: $cta_;
+                    text-align: center;
+                }
+            }
+        }
+        .center-side {
+            margin: 0 .4em;
+            p{
+                font-size: .8em;
+                text-align: justify;
+            }
+        }
+        .bottom-side {
+            display: flex;
+            justify-content: center;
+            margin: .3em 1em;
+            button {
+                border-radius: 5px;
+                color: white;
+                border: none;
+                padding: .5em .8em;
+                margin: 0 1em;
+            }
+        }
+    }
 }
 
 @mixin form-search($type_display) {
@@ -15,5 +84,91 @@
             border: none;
             background-color: #E5E5E5;
         }
+    }
+}
+
+@mixin box-top($marg1,$marg2,$size_font) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow:2px 2px 4px 6px rgb(216, 216, 216);
+    margin: $marg1 $marg2;
+    h4 {
+        font-size: $size_font;
+        display: inline;
+        margin: .3em 0;
+    }
+    .line-title {
+        border-bottom: 2px solid $secondary-color;
+        width: 94%;
+        align-items: center;
+        margin: .3em 0;
+    }
+    img {
+        width: 94%;
+        height: 50%;
+        align-items: center;
+        margin: .5em 0;
+    }
+}
+
+@mixin box-bottom($marg1,$marg2,$type) {
+    display: flex;
+    flex-direction: $type;
+    align-items: flex-start;
+    margin: $marg1 $marg2;
+    div {
+        width: 100%;
+        box-shadow:2px 2px 4px 6px rgb(216, 216, 216);
+    }
+}
+
+@mixin product_info($size_h,$val) {
+    padding: 0;
+    white-space: nowrap;
+    h5 {
+        margin: 1em;
+        font-size: $size_h;
+    }        
+    table {
+        margin: .5em 1em;
+        display: flex;
+        justify-content: center;
+        th{
+            text-align: left;
+            font-size: .8em ;
+            padding: .7em 2em;
+            padding-right: $val;
+        }
+        td{
+            text-align: right;
+            padding: .7em 2em;
+        }
+        button {
+            font-weight: bold;
+            color: white;
+            border: none;
+            padding: .6em 1.2em;
+            border-radius: 5px;
+        }
+    }
+    #status-stock {
+        color: white;
+        font-size: .8em;
+        padding: 0 .2em;
+        width: 35px;
+        border-radius: 5px;
+    }
+}
+@mixin product_desc($size_h) {
+    padding: 0;
+    h5 {
+        margin: 1em;
+        font-size: $size_h;
+    }
+    p {
+        margin: 1em 1.2em;
+        text-align: justify;
+        font-size: $size_h - .3;
     }
 }
