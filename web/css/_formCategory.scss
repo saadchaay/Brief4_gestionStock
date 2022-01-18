@@ -1,7 +1,7 @@
 @import "mixins" ;
 // mobile 
 @media screen and (min-width: 350px) and (max-width: 690px) {
-    .add-product {
+    .add-category {
         width: 90%;
         position: absolute;
         display: flex;
@@ -93,7 +93,7 @@
 
 // medium desktop 
 @media screen and (min-width: 691px) and (max-width: 950px) {
-    .add-product {
+    .add-category {
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -184,7 +184,7 @@
 
 // large desktop 
 @media screen and (min-width: 951px) and (max-width: 1920px) {
-    .add-product {
+    .add-category {
         position: absolute;
         width: 50%;
         display: flex;

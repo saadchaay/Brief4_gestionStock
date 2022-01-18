@@ -1,0 +1,31 @@
+div {
+  width: 500px;
+  height: 700px;
+  background-color: #FF6600;
+  border-radius: 0px 400px 400px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div img {
+  width: 200px;
+  height: 150px;
+  margin-left: 100px;
+}
+
+div p {
+  margin-left: 100px;
+  font-family: "Poppins";
+  font-weight: bold;
+  color: white;
+  font-size: 25px;
+}
+/*# sourceMappingURL=login_css.css.map */

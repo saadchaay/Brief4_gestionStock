@@ -1,0 +1,338 @@
+// mobile ...
+@import "mixins";
+$primary-color: #FF6600 ;
+$secondary-color: #1D2A38 ;
+@media screen and(min-width: 350px) and (max-width: 690px){
+    body {
+        margin: 0; 
+        font-family: 'Poppins';
+    }
+    header {
+        .container {
+            box-shadow: 1px 6px 6px #E5E5E5;
+            .header-contain {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin: 6px 15px;
+                .left-side {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .open-icon {
+                        width: 30px;
+                        height: 30px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .logo {
+                        width: 100px;
+                        height: 35px;
+                    }
+                }
+                .right-side {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: .2em 0;
+                    .iconify {
+                        width: 20px;
+                        height: 20px;
+                        margin: 0 .5em;
+                        display: none;
+                    }
+                    .pr-admin {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 30px;
+                    }
+                    .input-search {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .close-nav {
+            display: none;
+        }
+        .close-cta {
+            display: none;
+        }
+        .navbar {
+            width: 65%;
+            box-shadow: 1px 6px 6px #E5E5E5;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            z-index: 999;
+            background-color: white;
+            //TODO:: transition navbar...
+            nav {
+                ul {
+                    padding-left: 1.5em;
+                    list-style: none;
+                    margin-top: 0em;
+                    li {
+                        margin: 2em 0;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: $secondary-color;
+                        p {
+                            display: inline;
+                            margin-left: 1em;
+                            font-size: 1em;
+                        }
+                        .iconify {
+                            width: 25px;
+                            height: 25px;
+                            color: $secondary-color;
+                        }
+                        &:hover {
+                            color: $primary-color;
+                            .iconify {
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        .search-form {
+            display: flex;
+            justify-content: center;
+            margin: 1em 1em;
+            @include form-search(flex);
+        }
+    }
+}
+
+// medium desktop ...
+@media screen and(min-width: 691px) and (max-width: 950px){
+    body {
+        margin: 0; 
+        font-family: 'Poppins';
+    }
+    header {
+        .container {
+            box-shadow: 1px 6px 6px #E5E5E5;
+            padding: .2em 0;
+            .header-contain {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin: 6px 40px;
+                .left-side {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .open-icon {
+                        display: none;
+                        width: 30px;
+                        height: 30px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .logo {
+                        width: 100px;
+                        height: 35px;
+                    }
+                }
+                .right-side {
+                    display: flex;
+                    flex: 1;
+                    justify-content: center;
+                    align-items: center;
+                    margin: .2em 0;
+                    @include form-search(flex);
+                    .iconify {
+                        width: 20px;
+                        height: 20px;
+                        margin: 0 .5em;
+                        display: inline;
+                    }
+                    .pr-admin {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 30px;
+                        margin-left: 1em;
+                    }
+                    .input-search {
+                        display: inline;
+                    }
+                }
+                .close-nav {
+                    width: auto;
+                    box-shadow: none;
+                    flex: 5;
+                    nav {
+                        ul {
+                            display: flex;
+                            justify-content: center;
+                            padding-left: 0em;
+                            list-style: none;
+                            margin: .5em 0;
+                            margin-left: 0em;
+                            li {
+                                margin: 0em 1em;
+                            }
+                            .dash_link {
+                                display: none;
+                            }
+                            a {
+                                text-decoration: none;
+                                color: $secondary-color;
+                                p {
+                                    display: inline;
+                                    margin-left: 0em;
+                                    font-size: .8em;
+                                    font-weight: bold;
+                                    white-space: nowrap;
+                                }
+                                .iconify {
+                                    display: none;
+                                    width: 25px;
+                                    height: 25px;
+                                    color: $primary-color;
+                                }
+                                &:hover {
+                                    color: $primary-color;
+                                    .iconify {
+                                        color: $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .close-cta {
+            display: none;
+        }
+        .close-navbar {
+            display: none;
+        } 
+        .search-form {
+            display: none;
+        }       
+    }
+}
+
+// large Desktop
+@media screen and(min-width: 951px) and (max-width: 1920px){
+    body {
+        margin: 0; 
+        font-family: 'Poppins';
+    }
+    header {
+        .container {
+            box-shadow: 1px 6px 6px #E5E5E5;
+            padding: .2em 0;
+            .header-contain {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin: 6px 50px;
+                .left-side {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .open-icon {
+                        display: none;
+                        width: 30px;
+                        height: 30px;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .logo {
+                        width: 100px;
+                        height: 35px;
+                    }
+                }
+                .right-side {
+                    flex: 2;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: .2em 0;
+                    @include form-search(flex);
+                    .iconify {
+                        width: 20px;
+                        height: 20px;
+                        margin: 0 .5em;
+                        display: inline;
+                    }
+                    .pr-admin {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 30px;
+                        margin-left: 1em;
+                    }
+                    .input-search {
+                        display: inline;
+                    }
+                }
+                .close-nav {
+                    flex: 8;
+                    width: auto;
+                    box-shadow: none;
+                    nav {
+                        ul {
+                            display: flex;
+                            justify-content: flex-start;
+                            padding-left: 0em;
+                            list-style: none;
+                            margin: .5em 0;
+                            margin-left: 4em;
+                            li {
+                                margin: 0em 1.2em;
+                            }
+                            .dash_link {
+                                display: none;
+                            }
+                            a {
+                                color: $secondary-color;
+                                text-decoration: none;
+                                p {
+                                    display: inline;
+                                    margin-left: .7em;
+                                    font-size: .8em;
+                                    font-weight: bold;
+                                    white-space: nowrap;
+                                }
+                                .iconify {
+                                    display: none;
+                                    width: 25px;
+                                    height: 25px;
+                                    color: $secondary-color;
+                                }
+                                &:hover {
+                                    color: $primary-color;
+                                    .iconify {
+                                        color: $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .close-cta {
+            display: none;
+        }
+        .close-navbar {
+            display: none;
+        }
+        .search-form {
+            display: none;
+        }      
+    }
+}

@@ -148,6 +148,9 @@
     -webkit-box-shadow: 1px 6px 6px #E5E5E5;
             box-shadow: 1px 6px 6px #E5E5E5;
     padding: .2em 0;
+    position: fixed;
+    background: white;
+    width: 100%;
   }
   header .container .header-contain {
     display: -webkit-box;
@@ -302,6 +305,9 @@
     -webkit-box-shadow: 1px 6px 6px #E5E5E5;
             box-shadow: 1px 6px 6px #E5E5E5;
     padding: .2em 0;
+    position: fixed;
+    background: white;
+    width: 100%;
   }
   header .container .header-contain {
     display: -webkit-box;
@@ -503,6 +509,9 @@
     border: 2px solid #FF6600;
     border-radius: 4px;
   }
+  section.sec-direction .container .add-product-cta button:hover {
+    cursor: pointer;
+  }
   section.sec-direction .container .add-product-cta .iconify {
     width: 20px;
     height: 20px;
@@ -521,6 +530,8 @@
 @media screen and (min-width: 691px) and (max-width: 950px) {
   section.sec-direction {
     margin: 0;
+    position: relative;
+    top: 80px;
   }
   section.sec-direction .container {
     margin: 0 45px;
@@ -574,6 +585,9 @@
     border: 4px solid #FF6600;
     border-radius: 4px;
   }
+  section.sec-direction .container .add-product-cta button:hover {
+    cursor: pointer;
+  }
   section.sec-direction .container .add-product-cta .iconify {
     width: 20px;
     height: 20px;
@@ -592,6 +606,8 @@
 @media screen and (min-width: 951px) and (max-width: 1920px) {
   section.sec-direction {
     margin: 0;
+    position: relative;
+    top: 90px;
   }
   section.sec-direction .container {
     margin: 0 55px;
@@ -644,6 +660,9 @@
     background-color: #FF6600;
     border: 4px solid #FF6600;
     border-radius: 4px;
+  }
+  section.sec-direction .container .add-product-cta button:hover {
+    cursor: pointer;
   }
   section.sec-direction .container .add-product-cta .iconify {
     width: 20px;
@@ -786,6 +805,9 @@
 }
 
 @media screen and (min-width: 641px) and (max-width: 950px) {
+  section {
+    margin-top: 4.5em;
+  }
   section .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -914,6 +936,9 @@
 }
 
 @media screen and (min-width: 951px) and (max-width: 1920px) {
+  section {
+    margin-top: 5em;
+  }
   section .container {
     display: -webkit-box;
     display: -ms-flexbox;

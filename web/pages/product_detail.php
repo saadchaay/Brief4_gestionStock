@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product detail</title>
-    <link rel="stylesheet" href="./css/productDetail.css">
+    <link rel="stylesheet" href="../css/productDetail.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-contain">
                 <div class="left-side">
-                    <img id='open-nav' class="open-icon" src="./images/icons/open-nav.svg" alt="">
-                    <img id='close-nav' class="close-cta" src="./images/icons/close-nav.svg" alt="" >
-                    <img class="logo" src="./images/logo-v2.0.png" alt="">
+                    <img id='open-nav' class="open-icon" src="../images/icons/open-nav.svg" alt="">
+                    <img id='close-nav' class="close-cta" src="../images/icons/close-nav.svg" alt="" >
+                    <img class="logo" src="../images/logo-v2.0.png" alt="">
                 </div>
                 <div id="navbar-content" class="close-nav">
                     <nav>
@@ -43,7 +43,7 @@
                         <input class="input-search" type="text" name="search" placeholder="Search here...">
                         <span class="iconify" data-icon="el:search" style="color: #888;"></span>
                     </form>
-                    <img class="pr-admin" src="./images/user_.jpg" alt="">
+                    <img class="pr-admin" src="../images/user_.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
             <div class="top-side">
                 <h4>Product detail</h4>
                 <div class="line-title"></div>
-                <img class="product-img" src="./images/veggies 2.jpg" alt="">
+                <img class="product-img" src="../images/veggies 2.jpg" alt="">
                 <h4>veggies 2</h4>
             </div>
             <div class="bottom-side">
@@ -112,7 +112,7 @@
         </div>
     </section>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
-    <script src="./js/nav.js"></script>
-    <script src="./js/details.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/details.js"></script>
 </body>
 </html>

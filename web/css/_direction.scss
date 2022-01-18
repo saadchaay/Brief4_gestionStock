@@ -42,6 +42,9 @@
                     background-color: #FF6600;
                     border: 2px solid #FF6600;
                     border-radius: 4px;
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
                 .iconify {
                     width: 20px;
@@ -66,6 +69,8 @@
 @media screen and(min-width: 691px) and (max-width: 950px){
     section.sec-direction {
         margin: 0;
+        position: relative;
+        top: 80px;
         .container {
             margin: 0 45px;
             display: flex;
@@ -105,6 +110,9 @@
                     background-color: #FF6600;
                     border: 4px solid #FF6600;
                     border-radius: 4px;
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
                 .iconify {
                     width: 20px;
@@ -129,6 +137,8 @@
 @media screen and(min-width: 951px) and (max-width: 1920px){
     section.sec-direction {
         margin: 0;
+        position: relative;
+        top: 90px;
         .container {
             margin: 0 55px;
             display: flex;
@@ -168,6 +178,9 @@
                     background-color: #FF6600;
                     border: 4px solid #FF6600;
                     border-radius: 4px;
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
                 .iconify {
                     width: 20px;

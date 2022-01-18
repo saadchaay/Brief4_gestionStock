@@ -32,6 +32,7 @@
 // medium desktop ...
 @media screen and(min-width: 641px) and (max-width: 950px){
     section {
+        margin-top: 4.5em;
         .container {
             display: flex;
             justify-content: space-between;
@@ -59,6 +60,7 @@
 // large Desktop
 @media screen and(min-width: 951px) and (max-width: 1920px){
     section {
+        margin-top: 5em;
         .container {
             display: flex;
             justify-content: space-between;

@@ -116,6 +116,9 @@
         .container {
             box-shadow: 1px 6px 6px #E5E5E5;
             padding: .2em 0;
+            position: fixed;
+            background: white;
+            width: 100%;
             .header-contain {
                 display: flex;
                 justify-content: space-between;
@@ -230,6 +233,9 @@
         .container {
             box-shadow: 1px 6px 6px #E5E5E5;
             padding: .2em 0;
+            position: fixed;
+            background: white;
+            width: 100%;
             .header-contain {
                 display: flex;
                 justify-content: space-between;
