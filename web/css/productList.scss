@@ -11,8 +11,18 @@
         .container {
             display: flex;
             flex-wrap: wrap;
-            @include content-item(column,row,column,115px,65px, auto, 60%);
+            @include content-item(column,row,column,115px,65px, 95%, 60%);
         }
+    }
+    .success-msg {
+        @include style-msg(135px,.6em,90%,#07be6e,#e0ffef);
+    }
+    .failed-msg {
+        @include style-msg(135px,.6em,90%,#f9423c,#ffebea);
+    }
+    .confirmation-msg {
+        
+        @include confirm-msg(100px,18%,85%);
     }
 }
 
@@ -28,6 +38,16 @@
             @include content-item(column,column,row,100%,130px,230px,30%);
         }
     }
+    .success-msg {
+        @include style-msg(135px,.6em,50%,#07be6e,#e0ffef);
+    }
+    .failed-msg {
+        @include style-msg(135px,.6em,50%,#f9423c,#ffebea);
+    }
+    .confirmation-msg {
+        @include confirm-msg(150px,18%,65%);
+        // display: none;
+    }
 }
 
 // large Desktop
@@ -41,6 +61,15 @@
             justify-content: center;
             @include content-item(column,column,row,100%,130px,230px,30%);
         }
+    }
+    .success-msg {
+        @include style-msg(100px,.9em,45%,#07be6e,#e0ffef);
+    }
+    .failed-msg {
+        @include style-msg(100px,.6em,45%,#f9423c,#ffebea);
+    }
+    .confirmation-msg {
+        @include confirm-msg(190px,25%,50%);
     }
 }
 

@@ -1,3 +1,6 @@
+<?php 
+// session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,49 +69,103 @@
                 </div>
             </div>
     </section>
+    <?php 
+        include '../test.php' ;
+    ?>
     <section>
         <div class="container">
-            <div class="top-side">
-                <h4>Product detail</h4>
-                <div class="line-title"></div>
-                <img class="product-img" src="../images/veggies 2.jpg" alt="">
-                <h4>veggies 2</h4>
-            </div>
-            <div class="bottom-side">
-                <div class="product-info">
-                    <h5>Product info</h5>
-                    <table>
-                        <tr>
-                            <th>Price</th>
-                            <td>$45.99</td>
-                        </tr>
-                        <tr>
-                            <th>Product category</th>
-                            <td>Veg</td>
-                        </tr>
-                        <tr>
-                            <th>Avaibility</th>
-                            <td><span id='status-stock'>Out stock</span></td>
-                        </tr>
-                        <tr>
-                            <th>SKU identity</th>
-                            <td>67098</td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <form action=""><button type="submit">Remove</button></form>
-                            </th>
-                            <td>
-                                <form action=""><button type="submit">Edit</button></form>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="product-desc">
-                    <h5>Product description</h5>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book type and scrambled it to make a type specimen book.</p>
-                </div>
-            </div>
+            <?php 
+                if(isset($_POST["show-details"])) {
+                    $id = $_POST["show-details"];
+                    $item = GET_PRODUCT($CONNECTION_MYSQL,$id);
+                    $status = stock($item["_status"]);
+                    $name_catg = GetName_category($CONNECTION_MYSQL,$item["ID_category"]);
+                    echo '<div class="top-side">
+                        <h4>Product detail</h4>
+                        <div class="line-title"></div>
+                        <img class="product-img" src="../images/'.$item["image"].'" alt="">
+                        <h4>'.$item["_name"].'</h4>
+                    </div>
+                    <div class="bottom-side">
+                        <div class="product-info">
+                            <h5>Product info</h5>
+                            <table>
+                                <tr>
+                                    <th>Price</th>
+                                    <td>$ '. $item["_price"] .'</td>
+                                </tr>
+                                <tr>
+                                    <th>Product category</th>
+                                    <td>'.$name_catg.'</td>
+                                </tr>
+                                <tr>
+                                    <th>Avaibility</th>
+                                    <td><span id="status-stock">'. $status .'</span></td>
+                                </tr>
+                                <tr>
+                                    <th>SKU identity</th>
+                                    <td>'.$item["SKU_identity"].'</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <form action=""><button type="submit">Remove</button></form>
+                                    </th>
+                                    <td>
+                                        <form action=""><button type="submit">Edit</button></form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="product-desc">
+                            <h5>Product description</h5>
+                            <p>'.$item["_description"].'</p>
+                        </div>
+                    </div>' ;
+                } 
+                else {
+                    echo '<div class="top-side">
+                        <h4>Product detail</h4>
+                        <div class="line-title"></div>
+                        <img class="product-img" src="../images/veggies 2.jpg" alt="">
+                        <h4>veggies 2</h4>
+                    </div>
+                    <div class="bottom-side">
+                        <div class="product-info">
+                            <h5>Product info</h5>
+                            <table>
+                                <tr>
+                                    <th>Price</th>
+                                    <td>$45.99</td>
+                                </tr>
+                                <tr>
+                                    <th>Product category</th>
+                                    <td>Veg</td>
+                                </tr>
+                                <tr>
+                                    <th>Avaibility</th>
+                                    <td><span id="status-stock">Out stock</span></td>
+                                </tr>
+                                <tr>
+                                    <th>SKU identity</th>
+                                    <td>67098</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <form action=""><button type="submit">Remove</button></form>
+                                    </th>
+                                    <td>
+                                        <form action=""><button type="submit">Edit</button></form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="product-desc">
+                            <h5>Product description</h5>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book type and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div> ' ;
+                }  
+            ?>
         </div>
     </section>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>

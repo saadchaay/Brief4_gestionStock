@@ -43,17 +43,26 @@
                 display: flex;
                 justify-content: space-between;
                 flex-direction: $type_3;
-                h4 {
+                button {
+                    background: none;
+                    border: none;
+                    font-weight: bold;
                     font-size: .9em;
-                    margin: 0;
-                    white-space: nowrap;
-                    color: $secondary-color;
+                    h4 {
+                        margin: 0;
+                        white-space: nowrap;
+                        &:hover {
+                            color: $secondary-color;
+                            cursor: pointer;
+                        }
+                    }
                 }
                 p {
                     margin: 0;
                     white-space: nowrap;
                     font-size: .83em;
                     color: gray;
+                    overflow-wrap: break-word;
                 }
                 span {
                     color: $primary-color;
@@ -74,6 +83,7 @@
             p{
                 font-size: .8em;
                 text-align: justify;
+                overflow-wrap: break-word;
             }
         }
         .bottom-side {
@@ -193,7 +203,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -270,8 +280,8 @@
     }
 }
 
-@mixin success-msg($val,$size) {
-    width: 40%;
+@mixin style-msg($val,$size,$width,$color,$back) {
+    width: $width;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -279,16 +289,51 @@
     top: $val;
     left: 100%;
     font-size: $size;
-    color: #07be6e;
-    border: 1.4px solid #07be6e;
-    background-color: #e0ffef;
+    color: $color;
+    border: 1.4px solid $color;
+    background-color: $back;
     .iconify {
         width: 20px;
         height: 20px;
     }
     p {
+        white-space: nowrap;
         span {
             font-weight: bold;
         }
     }
+}
+
+@mixin confirm-msg($top,$left,$width) {
+        position: sticky;
+        top: $top;
+        left: $left;
+        background-color: white;
+        border: 1.3px solid white;
+        box-shadow: 1px 1px 6px 2px #bebebe;
+        padding: 1em 0;
+        width: $width;
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin: 0 1em;
+            p {
+                font-size: .9em;
+                text-align: left;
+                padding-bottom: 1em;
+                border-bottom: 1px solid #bebebe;
+                white-space: nowrap;
+            }
+            form {
+                text-align: right;
+                @include buttons(.3em);
+                justify-content: flex-end;
+                .cancel-cta {
+                    background-color: $secondary-color;
+                }
+                .ok-cta {
+                    background-color: $primary-color;
+                }
+            }
+        }
 }

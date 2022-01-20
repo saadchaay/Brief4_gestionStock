@@ -78,10 +78,6 @@
         include '../test.php' ;
         $allCategories = GET_CATEGORY($CONNECTION_MYSQL);
     ?>
-    <div class="success-msg" id="success-msg">
-        <span class="iconify" data-icon="ion:checkmark-done-circle-sharp" style="color: #4ecb71;"></span>
-        <p><span> WELL DONE! </span>  Your category has been added successfully.</p>
-    </div>
     <section id="add-category-form" class="disabled-form">
         <div class="head-form">
             <img id="close-form" class="close-icon-form" src="../images/icons/close-nav.svg" alt="">
@@ -121,31 +117,35 @@
         </form>
     </section> 
     <section id="categories" class="all-items-categories">
-        <div id="category-item" class="item-category" >
-            <img src="../images/veggies 2.jpg" alt="">
-            <div class="paragraph_1">
-                <h3>Burgger</h3>
-            </div>
-            <div class="paragraph_2" >
+        <?php 
+        foreach ($allCategories as $category) {
+            echo '<div id="category-item" class="item-category" >
+                <img src="../images/'.$category["image"].'" alt="">
+                <div class="paragraph_1">
+                    <h3>'. $category["_name"] .'</h3>
+                </div>
+                <div class="paragraph_2" >
+                    <div >
+                        <p>Total order </p>
+                        <span class="price"> 150 </span>
+                    </div>
+                    <div>
+                        <p>Revenue </p>
+                        <span class="price"> 1000 $</span>
+                    </div>
+                </div>
                 <div >
-                    <p>Total order </p>
-                    <span class="price"> 150 </span>
-                </div>
-                <div>
-                    <p>Revenue </p>
-                    <span class="price"> 1000 $</span>
-                </div>
-            </div>
-            <div >
-                <button class="see_more"> See products</button>
-            </div> 
-        </div>
+                    <button class="see_more"> See products</button>
+                </div> 
+            </div> ';
+        }
+        ?>
     </section>
 
 
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <script src="../js/imageInput.js"></script>
-    <script type="module" src="../js/nav.js"></script>
+    <script src="../js/nav.js"></script>
     <script type="module" src="../js/category.js"></script>
 
     <script>

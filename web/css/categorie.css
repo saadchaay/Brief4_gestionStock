@@ -736,7 +736,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -754,7 +754,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -772,7 +772,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -790,7 +790,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -988,7 +988,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -1006,7 +1006,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -1024,7 +1024,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -1042,7 +1042,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -1241,7 +1241,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -1259,7 +1259,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -1277,7 +1277,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -1295,7 +1295,7 @@
     font-size: .8em;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #000000;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
@@ -1531,9 +1531,69 @@
   section.all-items-categories .item-category .price {
     color: #FF6600;
   }
+  .success-msg {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 135px;
+    left: 100%;
+    font-size: 0.6em;
+    color: #07be6e;
+    border: 1.4px solid #07be6e;
+    background-color: #e0ffef;
+  }
+  .success-msg .iconify {
+    width: 20px;
+    height: 20px;
+  }
+  .success-msg p {
+    white-space: nowrap;
+  }
+  .success-msg p span {
+    font-weight: bold;
+  }
+  .failed-msg {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 135px;
+    left: 100%;
+    font-size: 0.6em;
+    color: #f9423c;
+    border: 1.4px solid #f9423c;
+    background-color: #ffebea;
+  }
+  .failed-msg .iconify {
+    width: 20px;
+    height: 20px;
+  }
+  .failed-msg p {
+    white-space: nowrap;
+  }
+  .failed-msg p span {
+    font-weight: bold;
+  }
 }
 
-@media screen and (min-width: 641px) and (max-width: 950px) {
+@media screen and (min-width: 691px) and (max-width: 950px) {
   section.all-items-categories {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1546,7 +1606,7 @@
     margin: 2em 1.5em;
     -webkit-box-shadow: 2px 3px 6px 6px #c5c2c2;
             box-shadow: 2px 3px 6px 6px #c5c2c2;
-    margin-top: 6em;
+    margin-top: 5.5em;
     padding: 1.7em 0;
   }
   section.all-items-categories .item-category {
@@ -1631,7 +1691,7 @@
     color: #FF6600;
   }
   .success-msg {
-    width: 40%;
+    width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1645,7 +1705,7 @@
     position: sticky;
     top: 135px;
     left: 100%;
-    font-size: 0.7em;
+    font-size: 0.6em;
     color: #07be6e;
     border: 1.4px solid #07be6e;
     background-color: #e0ffef;
@@ -1654,7 +1714,40 @@
     width: 20px;
     height: 20px;
   }
+  .success-msg p {
+    white-space: nowrap;
+  }
   .success-msg p span {
+    font-weight: bold;
+  }
+  .failed-msg {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 135px;
+    left: 100%;
+    font-size: 0.6em;
+    color: #f9423c;
+    border: 1.4px solid #f9423c;
+    background-color: #ffebea;
+  }
+  .failed-msg .iconify {
+    width: 20px;
+    height: 20px;
+  }
+  .failed-msg p {
+    white-space: nowrap;
+  }
+  .failed-msg p span {
     font-weight: bold;
   }
 }
@@ -1670,7 +1763,7 @@
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin: 2em 3em;
-    margin-top: 5.7em;
+    margin-top: 6.5em;
     -webkit-box-shadow: 2px 3px 6px 6px #c5c2c2;
             box-shadow: 2px 3px 6px 6px #c5c2c2;
     padding: 3em 0;
@@ -1758,7 +1851,7 @@
     color: #FF6600;
   }
   .success-msg {
-    width: 40%;
+    width: 45%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1781,7 +1874,40 @@
     width: 20px;
     height: 20px;
   }
+  .success-msg p {
+    white-space: nowrap;
+  }
   .success-msg p span {
+    font-weight: bold;
+  }
+  .failed-msg {
+    width: 45%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    left: 100%;
+    font-size: 0.6em;
+    color: #f9423c;
+    border: 1.4px solid #f9423c;
+    background-color: #ffebea;
+  }
+  .failed-msg .iconify {
+    width: 20px;
+    height: 20px;
+  }
+  .failed-msg p {
+    white-space: nowrap;
+  }
+  .failed-msg p span {
     font-weight: bold;
   }
 }

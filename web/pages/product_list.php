@@ -1,6 +1,5 @@
-<?php  
-    include '../test.php' ;
-    $allCategories = GET_CATEGORY($CONNECTION_MYSQL);
+<?php 
+session_start(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +72,11 @@
                 </div>
             </div>
     </section>
-
+    <?php  
+        include '../test.php' ;
+        $allCategories = GET_CATEGORY($CONNECTION_MYSQL);
+        $allItems = GET_PRODUCTS($CONNECTION_MYSQL);
+    ?>
     <section id="add-product-form" class="disabled-form">
         <div class="head-form">
             <img id="close-form" class="close-icon-form" src="../images/icons/close-nav.svg" alt="">
@@ -81,28 +84,28 @@
         <div class="logo-shop">
             <img src="../images/logo-v2.0.png" alt="logo">
         </div>
-        <h4>Please fill this form for add a product</h4>
+        <h4 id="heading">Please fill this form for add a product</h4>
         <form action="./product_list.php" method="post">
             <div class="div">
-                <input required name="_name" type="text" placeholder="Product name...">
+                <input id="_name" required name="_name" type="text" placeholder="Product name...">
             </div>
             <div class="div">
-                <input required name="sku_identity" type="number" placeholder="SKU idenity...">
-                <select name="_category" id="category-select">
-                    <option value="_category">Select category...</option>
+                <input required id="_sku" name="sku_identity" type="number" placeholder="SKU idenity...">
+                <select  name="_category" id="category-select">
+                    <option id="_category" value="_category">Select category...</option>
                     <?php 
                         foreach ($allCategories as $category) {
                             echo '<option value="'.$category["id_category"].'">'. $category["_name"] .'</option>' ;
-                        } 
+                        }
                     ?>
                 </select>
             </div>
             <div class="div">
-                <input required name="_quantity" type="number" placeholder="Quantity...">
-                <input required name="_price" type="number" placeholder="Price...">
+                <input required id="_quantity" name="_quantity" type="number" placeholder="Quantity...">
+                <input required id="_price" name="_price" type="number" placeholder="Price...">
             </div>
             <div class="div">
-                <textarea name="_description" id="" cols="30" rows="10" placeholder="Description..."></textarea>
+                <textarea id="_description" name="_description" id="" cols="30" rows="10" placeholder="Description..."></textarea>
             </div>
             
             <div class="file-upload">
@@ -123,33 +126,56 @@
             </div>
             <div class="btns">
                 <button type="reset">Reset</button>
-                <button name="submit_product" type="submit">Submit</button>
+                <button id="btn-submit" type="submit">Submit</button>
             </div>
         </form>
     </section>
 
+    <section id="confirm-form" class="disabled-form">
+        <div class="container">
+                <p>
+                    Are you sure you want to delete this item ?
+                </p>
+            <form action="./product_list.php" method="post">
+                <button class="cancel-cta" type="submit">Cancel</button>
+                <button id="confirm-msg" class="ok-cta" name="delete-product" type="submit">Confirm</button>
+            </form>
+        </div>
+    </section>
+
     <section class="items">
         <div id="container" class="container">
-            <div id="item" class="item">
-                <div class="top-side">
-                    <img src="../images/veggies.jpg" alt="">
-                    <div>
-                        <h4>Product name</h4>
-                        <p> Qty: 390</p> 
-                    </div>
-                    <div>
-                        <span> $45.99 </span>
-                        <span class="stock-status">In stock</span>
-                    </div>
-                </div>
-                <div class="center-side">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero totam veritatis reprehenderit nulla nisi fugit</p>
-                </div>
-                <div class="bottom-side">
-                    <button type="submit">Remove</button>
-                    <button type="submit">Edit</button>
-                </div>
-            </div>
+            <?php
+                foreach ($allItems as $item) {
+                    $categ = Get_categoryName($CONNECTION_MYSQL,$item["id_product"]);
+                    $status = stock($item["_status"]);
+                    echo '
+                    <div id="item" class="item">
+                        <div class="top-side">
+                            <img src="../images/'.$item["image"].'" alt="">
+                            <div>
+                                <form action="./product_detail.php" method= "POST">
+                                    <button type="submit" name="show-details" value="'.$item["id_product"].'">
+                                        <h4 name="name" id="name_item">'.$item["_name"].'</h4>
+                                    </button>
+                                </form>
+                                <p> Qty: '.$item["_quantity"].'</p> 
+                            </div>
+                            <div>
+                                <span > $'.$item["_price"].'</span>
+                                <span class="stock-status">'. $status .'</span>
+                            </div>
+                        </div>
+                        <div class="center-side">
+                            <p name="desc">'.$item["_description"].'</p>
+                        </div>
+                        <div class="bottom-side">
+                            <button onclick="displayDelete(\''.$item["SKU_identity"].'\');" value="'.$item["SKU_identity"].'">Remove</button>
+                            <button onclick="displayFormEdit(\''.$item["_name"].'\',\''.$item["_description"].'\',\''.$item["_price"].'\',\''.$item["_quantity"].'\',\''.$item["SKU_identity"].'\',\''.$categ["_name"].'\');">Edit</button>
+                        </div>
+                    </div>' ;
+                }
+            ?>
         </div>
     </section>
 
@@ -161,9 +187,50 @@
     <script>
         var ADD_FORM = document.getElementById('add-product-form');
         const CLOSE_FORM_ICON = document.getElementById('close-form');
-
+        var input_name = document.getElementById('_name');
+        var input_sku = document.getElementById('_sku');
+        var input_desc = document.getElementById('_description');
+        var input_price = document.getElementById('_price');
+        var input_quantity = document.getElementById('_quantity');
+        var input_catg = document.getElementById('_category');
+        var heading = document.getElementById('heading');
+        var btn_update = document.getElementById('btn-submit');
+        var form_delete = document.getElementById('confirm-form');
+        var btn_delete = document.getElementById('confirm-msg');
             function displayForm() {
                 ADD_FORM.className = "add-product";
+                input_name.setAttribute('value',"");
+                input_sku.setAttribute('value',"");
+                input_sku.removeAttribute('disabled');
+                input_sku.setAttribute('style','background: none;');
+                input_desc.textContent = "" ;
+                input_price.setAttribute('value',"");
+                input_quantity.setAttribute('value',"");
+                input_catg.setAttribute('value',"");
+                btn_update.textContent = "Submit";
+                heading.textContent = "Please fill this form for add a product";
+                btn_update.setAttribute('name','submit_product');
+            }
+
+            function displayFormEdit(name, description, price, quantity, sku_id) {
+                ADD_FORM.className = "add-product";
+                input_name.setAttribute('value',name);
+                // input_sku.setAttribute('disabled',true);
+                input_sku.setAttribute('value',sku_id);
+            //TODO: keep disabled SKU input ....
+                input_sku.setAttribute('style','background: #f1f1f1;');
+                input_sku.setAttribute('value',sku_id);
+                input_desc.textContent = description ;
+                input_price.setAttribute('value',price);
+                input_quantity.setAttribute('value',quantity);
+                heading.textContent = "Please change this data form for update a product";
+                btn_update.textContent = "Update";
+                btn_update.setAttribute('name','update-product');
+            }
+
+            function displayDelete(sku_id){
+                form_delete.className = "confirmation-msg" ;
+                btn_delete.setAttribute('value',sku_id);
             }
 
             CLOSE_FORM_ICON.addEventListener('click' , () => {
