@@ -1,5 +1,5 @@
 <?php
+session_start();
+session_destroy();
 
-if(isset($_POST["show-details"])) {
-    include
-}
+?>

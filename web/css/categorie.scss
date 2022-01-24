@@ -60,16 +60,20 @@
                 }
             }
             .see_more {
-                display: block;
-                margin-top: 1.5em;
-                margin-left: auto;
-                margin-right: auto;
-                background-color:$primary-color ;
-                height: 40px;
-                border-radius: 20px;
-                width: 90%;
-                border-style: none;
-                color: white;
+                display: flex;
+                justify-content: space-around;
+                button {
+                    display: block;
+                    margin-top: 1.5em;
+                    margin-left: auto;
+                    margin-right: auto;
+                    background-color:$primary-color ;
+                    height: 40px;
+                    border-radius: 20px;
+                    width: 40%;
+                    border-style: none;
+                    color: white;
+                }
             }
             .price {
                 color: $primary-color;
@@ -143,16 +147,20 @@
                 }
             }
             .see_more {
-                display: block;
-                margin-top: 1.5em;
-                margin-left: auto;
-                margin-right: auto;
-                background-color:$primary-color ;
-                height: 40px;
-                border-radius: 20px;
-                width: 90%;
-                border-style: none;
-                color: white;
+                display: flex;
+                justify-content: space-around;
+                button {
+                    display: block;
+                    margin-top: 1.5em;
+                    margin-left: auto;
+                    margin-right: auto;
+                    background-color:$primary-color ;
+                    height: 40px;
+                    border-radius: 20px;
+                    width: 40%;
+                    border-style: none;
+                    color: white;
+                }
             }
             .price {
                 color: $primary-color;
@@ -227,16 +235,20 @@
                 }
             }
             .see_more {
-                display: block;
-                margin-top: 1.5em;
-                margin-left: auto;
-                margin-right: auto;
-                background-color:$primary-color ;
-                height: 40px;
-                border-radius: 20px;
-                width: 90%;
-                border-style: none;
-                color: white;
+                display: flex;
+                justify-content: space-around;
+                button {
+                    display: block;
+                    margin-top: 1.5em;
+                    margin-left: auto;
+                    margin-right: auto;
+                    background-color:$primary-color ;
+                    height: 40px;
+                    border-radius: 20px;
+                    width: 40%;
+                    border-style: none;
+                    color: white;
+                }
             }
             .price {
                 color: $primary-color;

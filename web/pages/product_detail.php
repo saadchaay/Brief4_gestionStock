@@ -1,5 +1,10 @@
 <?php 
-// session_start(); 
+    session_start();
+ // Check if the user is already logged in, if yes then redirect him to welcome page
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.php");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,12 +22,12 @@
                 <div class="left-side">
                     <img id='open-nav' class="open-icon" src="../images/icons/open-nav.svg" alt="">
                     <img id='close-nav' class="close-cta" src="../images/icons/close-nav.svg" alt="" >
-                    <img class="logo" src="../images/logo-v2.0.png" alt="">
+                    <a href="dashboard.php"><img class="logo" src="../images/logo-v2.0.png" alt=""></a>
                 </div>
                 <div id="navbar-content" class="close-nav">
                     <nav>
                         <ul id="navbar-list">
-                            <li class="dash_link"><a href="index.php">
+                            <li class="dash_link"><a href="dashboard.php">
                                 <span class="iconify" data-icon="carbon:dashboard-reference" ></span>
                                 <p> Dashboard </p></a>
                             </li>
@@ -70,7 +75,7 @@
             </div>
     </section>
     <?php 
-        include '../test.php' ;
+        include '../controller.php' ;
     ?>
     <section>
         <div class="container">

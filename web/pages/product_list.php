@@ -1,5 +1,10 @@
 <?php 
-session_start(); 
+    session_start();
+ // Check if the user is already logged in, if yes then redirect him to welcome page
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.php");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,12 +23,12 @@ session_start();
                 <div class="left-side">
                     <img id='open-nav' class="open-icon" src="../images/icons/open-nav.svg" alt="">
                     <img id='close-nav' class="close-cta" src="../images/icons/close-nav.svg" alt="" >
-                    <img class="logo" src="../images/logo-v2.0.png" alt="">
+                    <a href="dashboard.php"><img class="logo" src="../images/logo-v2.0.png" alt=""></a>
                 </div>
                 <div id="navbar-content" class="close-nav">
                     <nav>
                         <ul id="navbar-list">
-                            <li class="dash_link"><a href="index.php">
+                            <li class="dash_link"><a href="dashboard.php">
                                 <span class="iconify" data-icon="carbon:dashboard-reference" ></span> <p>Dashboard</p></a>
                             </li>
                             <li><a href="category.php">
@@ -73,7 +78,7 @@ session_start();
             </div>
     </section>
     <?php  
-        include '../test.php' ;
+        include '../controller.php' ;
         $allCategories = GET_CATEGORY($CONNECTION_MYSQL);
         $allItems = GET_PRODUCTS($CONNECTION_MYSQL);
     ?>
@@ -85,7 +90,7 @@ session_start();
             <img src="../images/logo-v2.0.png" alt="logo">
         </div>
         <h4 id="heading">Please fill this form for add a product</h4>
-        <form action="./product_list.php" method="post">
+        <form action="./product_list.php" method="post" onsubmit="validateForm();">
             <div class="div">
                 <input id="_name" required name="_name" type="text" placeholder="Product name...">
             </div>
@@ -103,6 +108,10 @@ session_start();
             <div class="div">
                 <input required id="_quantity" name="_quantity" type="number" placeholder="Quantity...">
                 <input required id="_price" name="_price" type="number" placeholder="Price...">
+            </div>
+            <div class="radio-content">
+               <span>In stock<input type="radio" name="status_stock" value='<?php echo "1";?>'></span>
+               <span>Out stock<input type="radio" name="status_stock" value='<?php echo "0";?>'></span> 
             </div>
             <div class="div">
                 <textarea id="_description" name="_description" id="" cols="30" rows="10" placeholder="Description..."></textarea>
@@ -137,7 +146,7 @@ session_start();
                     Are you sure you want to delete this item ?
                 </p>
             <form action="./product_list.php" method="post">
-                <button class="cancel-cta" type="submit">Cancel</button>
+                <button class="cancel-cta" onclick="disabledMsg();">Cancel</button>
                 <button id="confirm-msg" class="ok-cta" name="delete-product" type="submit">Confirm</button>
             </form>
         </div>
@@ -185,57 +194,7 @@ session_start();
     <script type="module" src="../js/list.js"></script>
     
     <script>
-        var ADD_FORM = document.getElementById('add-product-form');
-        const CLOSE_FORM_ICON = document.getElementById('close-form');
-        var input_name = document.getElementById('_name');
-        var input_sku = document.getElementById('_sku');
-        var input_desc = document.getElementById('_description');
-        var input_price = document.getElementById('_price');
-        var input_quantity = document.getElementById('_quantity');
-        var input_catg = document.getElementById('_category');
-        var heading = document.getElementById('heading');
-        var btn_update = document.getElementById('btn-submit');
-        var form_delete = document.getElementById('confirm-form');
-        var btn_delete = document.getElementById('confirm-msg');
-            function displayForm() {
-                ADD_FORM.className = "add-product";
-                input_name.setAttribute('value',"");
-                input_sku.setAttribute('value',"");
-                input_sku.removeAttribute('disabled');
-                input_sku.setAttribute('style','background: none;');
-                input_desc.textContent = "" ;
-                input_price.setAttribute('value',"");
-                input_quantity.setAttribute('value',"");
-                input_catg.setAttribute('value',"");
-                btn_update.textContent = "Submit";
-                heading.textContent = "Please fill this form for add a product";
-                btn_update.setAttribute('name','submit_product');
-            }
-
-            function displayFormEdit(name, description, price, quantity, sku_id) {
-                ADD_FORM.className = "add-product";
-                input_name.setAttribute('value',name);
-                // input_sku.setAttribute('disabled',true);
-                input_sku.setAttribute('value',sku_id);
-            //TODO: keep disabled SKU input ....
-                input_sku.setAttribute('style','background: #f1f1f1;');
-                input_sku.setAttribute('value',sku_id);
-                input_desc.textContent = description ;
-                input_price.setAttribute('value',price);
-                input_quantity.setAttribute('value',quantity);
-                heading.textContent = "Please change this data form for update a product";
-                btn_update.textContent = "Update";
-                btn_update.setAttribute('name','update-product');
-            }
-
-            function displayDelete(sku_id){
-                form_delete.className = "confirmation-msg" ;
-                btn_delete.setAttribute('value',sku_id);
-            }
-
-            CLOSE_FORM_ICON.addEventListener('click' , () => {
-                ADD_FORM.className = "disabled-form" ;
-            });
+        
     </script>
 
 </body>

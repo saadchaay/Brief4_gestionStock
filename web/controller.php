@@ -3,6 +3,8 @@
 include 'CRUD_category.php' ;
 include 'CRUD_product.php' ;
 
+
+
 // ADD CATEGORY
 if(isset($_POST["submit_category"])){
     $categoryData = array(
@@ -31,7 +33,7 @@ if(isset($_POST["submit_product"])){
         "_DESCRIPTION" => $_POST['_description'],
         "_QUANTITY" => $_POST['_quantity'],
         "_PRICE" => $_POST['_price'],
-        "_STATUS" => 1,
+        "_STATUS" => $_POST['status_stock'],
         "_CATEGORY" => $_POST['_category'],
         "_IMAGE" => $_POST['_image']      
     );
@@ -47,11 +49,6 @@ if(isset($_POST["submit_product"])){
             </div>" ;
     }
 } 
-
-// // direction to product details..
-// if(isset($_POST["show-details"])) {
-//     $_SESSION["id_item"] = $_POST["show-details"];
-// }
 
 // DELETE product
 if(isset($_POST["delete-product"])){
@@ -76,7 +73,7 @@ if(isset($_POST["update-product"])){
         "_DESCRIPTION" => $_POST['_description'],
         "_QUANTITY" => $_POST['_quantity'],
         "_PRICE" => $_POST['_price'],
-        "_STATUS" => 0,
+        "_STATUS" => $_POST['status_stock'],
         "_CATEGORY" => $_POST['_category'],
         "_IMAGE" => $_POST['_image']      
     );

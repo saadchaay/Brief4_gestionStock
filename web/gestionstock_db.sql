@@ -146,7 +146,7 @@ ALTER TABLE `product`
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`ID_category`) REFERENCES `category` (`id_category`) ON UPDATE NO ACTION;
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`ID_category`) REFERENCES `category` (`id_category`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

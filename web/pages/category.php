@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+ // Check if the user is already logged in, if yes then redirect him to welcome page
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +25,12 @@
                 <div class="left-side">
                     <img id='open-nav' class="open-icon" src="../images/icons/open-nav.svg" alt="">
                     <img id='close-nav' class="close-cta" src="../images/icons/close-nav.svg" alt="" >
-                    <img class="logo" src="../images/logo-v2.0.png" alt="">
+                    <a href="dashboard.php"><img class="logo" src="../images/logo-v2.0.png" alt=""></a>
                 </div>
                 <div id="navbar-content" class="close-nav">
                     <nav>
                         <ul id="navbar-list">
-                            <li class="dash_link"><a href="index.php">
+                            <li class="dash_link"><a href="dashboard.php">
                                 <span class="iconify" data-icon="carbon:dashboard-reference" ></span>
                                 <p> Dashboard </p></a>
                             </li>
@@ -75,7 +84,7 @@
             </div>
     </section>
     <?php  
-        include '../test.php' ;
+        include '../controller.php' ;
         $allCategories = GET_CATEGORY($CONNECTION_MYSQL);
     ?>
     <section id="add-category-form" class="disabled-form">
@@ -93,7 +102,7 @@
             <div class="div">
                 <textarea required name="_description" id="" cols="30" rows="10" placeholder="Description..."></textarea>
             </div>
-            
+    
             <div class="file-upload">
                 <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Choose file...</button>
                 <div class="image-upload-wrap">
@@ -134,8 +143,9 @@
                         <span class="price"> 1000 $</span>
                     </div>
                 </div>
-                <div >
-                    <button class="see_more"> See products</button>
+                <div class="see_more">
+                    <button onclick="dispDelete(\''.$category["id_category"].'\');" value="'.$category["id_category"].'"> Remove</button>
+                    <button onclick="dispFormEdit(\''.$category["_name"].'\',\''.$category["_description"].'\');"> Update</button>
                 </div> 
             </div> ';
         }
@@ -149,14 +159,14 @@
     <script type="module" src="../js/category.js"></script>
 
     <script>
-        const ADD_FORM = document.getElementById('add-category-form');
-        const CLOSE_FORM_ICON = document.getElementById('close-form');
+        const ADD_FORM_ctg = document.getElementById('add-category-form');
+        const CLOSE_FOR = document.getElementById('close-form');
 
             function displayForm_category() {
-                ADD_FORM.className = "add-category";
+                ADD_FORM_ctg.className = "add-category";
             }
-            CLOSE_FORM_ICON.addEventListener('click' , () => {
-                ADD_FORM.className = "disabled-form" ;
+            CLOSE_FOR.addEventListener('click' , () => {
+                ADD_FORM_ctg.className = "disabled-form" ;
             });
     </script>
     

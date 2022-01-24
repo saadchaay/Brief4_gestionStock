@@ -39,6 +39,14 @@
             margin: .5em 0;
             margin-left: 1.5em;
         }
+        .radio-content {
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 0;
+            span {
+                font-size: .8em;
+            }
+        }
         input[type="number"] {
             @include form-control(1em,37%) ;
         }
@@ -51,6 +59,7 @@
         textarea {
             @include form-control(3em,81.5%) ;
             height: 70px;
+            resize: none;
         }
         .file-upload {
             @include custom-file(84%,1.5em);
@@ -130,6 +139,14 @@
             margin: .5em 0;
             margin-left: 1.5em;
         }
+        .radio-content {
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 0;
+            span {
+                font-size: .8em;
+            }
+        }
         input[type="number"] {
             @include form-control(1em,42.2%) ;
         }
@@ -142,6 +159,7 @@
         textarea {
             @include form-control(3em,90%) ;
             height: 70px;
+            resize: none;
         }
         .file-upload {
             @include custom-file(90%,1.6em);
@@ -222,6 +240,14 @@
             margin: .5em 0;
             margin-left: 1.5em;
         }
+        .radio-content {
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 0;
+            span {
+                font-size: .8em;
+            }
+        }
         input[type="number"] {
             @include form-control(1em,42.75%) ;
         }
@@ -234,6 +260,7 @@
         textarea {
             @include form-control(3em,90%) ;
             height: 70px;
+            resize: none;
         }
         .file-upload {
             @include custom-file(90%,1.6em);

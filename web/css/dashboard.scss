@@ -1,0 +1,28 @@
+@import "variable" ;
+@import "mixins" ;
+@import "header" ;
+
+@media screen and (min-width: 350px) and (max-width: 690px) {
+    
+}
+
+
+@media screen and (min-width: 691px) and (max-width: 950px) {
+    section.statistic {
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2em;
+            .part-div {
+                width: 20%;
+                background-color: white;
+                box-shadow: 2px 2px 3px 6px #bebebe;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 951px) and (max-width: 1920px) {
+
+}

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +9,21 @@
     <title>Login page</title>
 </head>
 <body>
-    <div>
-        <img src="../images/logo-v2.0.png" alt="">
-        <p>Welcome to Nothing</p>
-    </div>
+    <section class="login-part">
+        <div class="container">
+            <div class="div_form"> 
+                <div class="admin_image">
+                    <img src="../images/user_.jpg" alt="">
+                </div>
+                <form action="../check_login.php" class="form_login" method="POST">
+                        <span>Login below to get started</span>
+                        <input type="text" name="username" placeholder="Email Adresse">
+                        <input type="password"  name="password" placeholder="password">
+                        <button type="submit" name="check-login">Login</button>
+                    </form>
+            </div>
+        </div>
+    </section>
+    
 </body>
 </html>

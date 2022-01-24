@@ -148,7 +148,8 @@
     -webkit-box-shadow: 1px 6px 6px #E5E5E5;
             box-shadow: 1px 6px 6px #E5E5E5;
     padding: .2em 0;
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     background: white;
     width: 100%;
   }
@@ -531,7 +532,7 @@
   section.sec-direction {
     margin: 0;
     position: relative;
-    top: 80px;
+    top: 20px;
   }
   section.sec-direction .container {
     margin: 0 45px;
@@ -1517,6 +1518,13 @@
     white-space: nowrap;
   }
   section.all-items-categories .item-category .see_more {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  section.all-items-categories .item-category .see_more button {
     display: block;
     margin-top: 1.5em;
     margin-left: auto;
@@ -1524,7 +1532,7 @@
     background-color: #FF6600;
     height: 40px;
     border-radius: 20px;
-    width: 90%;
+    width: 40%;
     border-style: none;
     color: white;
   }
@@ -1676,6 +1684,13 @@
     white-space: nowrap;
   }
   section.all-items-categories .item-category .see_more {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  section.all-items-categories .item-category .see_more button {
     display: block;
     margin-top: 1.5em;
     margin-left: auto;
@@ -1683,7 +1698,7 @@
     background-color: #FF6600;
     height: 40px;
     border-radius: 20px;
-    width: 90%;
+    width: 40%;
     border-style: none;
     color: white;
   }
@@ -1836,6 +1851,13 @@
     white-space: nowrap;
   }
   section.all-items-categories .item-category .see_more {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  section.all-items-categories .item-category .see_more button {
     display: block;
     margin-top: 1.5em;
     margin-left: auto;
@@ -1843,7 +1865,7 @@
     background-color: #FF6600;
     height: 40px;
     border-radius: 20px;
-    width: 90%;
+    width: 40%;
     border-style: none;
     color: white;
   }
