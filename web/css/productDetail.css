@@ -306,7 +306,6 @@
     -webkit-box-shadow: 1px 6px 6px #E5E5E5;
             box-shadow: 1px 6px 6px #E5E5E5;
     padding: .2em 0;
-    position: fixed;
     background: white;
     width: 100%;
   }
@@ -608,7 +607,7 @@
   section.sec-direction {
     margin: 0;
     position: relative;
-    top: 90px;
+    top: 10px;
   }
   section.sec-direction .container {
     margin: 0 55px;

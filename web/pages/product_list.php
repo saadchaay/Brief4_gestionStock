@@ -48,7 +48,7 @@
                         <input class="input-search" type="text" name="search" placeholder="Search here...">
                         <span class="iconify" data-icon="el:search" style="color: #888;"></span>
                     </form>
-                    <img class="pr-admin" src="../images/user_.jpg" alt="">
+                    <a href="../logoutAdmin.php"><span class="iconify" data-icon="ls:logout" style="color: #ff9a62;"></span></a>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
                <span>Out stock<input type="radio" name="status_stock" value='<?php echo "0";?>'></span> 
             </div>
             <div class="div">
-                <textarea id="_description" name="_description" id="" cols="30" rows="10" placeholder="Description..."></textarea>
+                <textarea id="_description" name="_description" placeholder="Description..."></textarea>
             </div>
             
             <div class="file-upload">
@@ -190,6 +190,7 @@
 
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <script src="../js/imageInput.js"></script>
+    <script src="../js/product.js"></script>
     <script src="../js/nav.js"></script>
     <script type="module" src="../js/list.js"></script>
     

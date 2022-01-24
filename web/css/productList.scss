@@ -21,8 +21,7 @@
         @include style-msg(135px,.6em,90%,#f9423c,#ffebea);
     }
     .confirmation-msg {
-        
-        @include confirm-msg(100px,18%,85%);
+        @include confirm-msg(35%,7%,85%);
     }
 }
 
@@ -52,6 +51,7 @@
 @media screen and(min-width: 951px) and (max-width: 1920px){
     section.items {
         margin: 1em 15px;
+        // margin-top: 6em;
         .container {
             display: flex;
             flex-wrap: wrap;

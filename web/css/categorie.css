@@ -306,7 +306,6 @@
     -webkit-box-shadow: 1px 6px 6px #E5E5E5;
             box-shadow: 1px 6px 6px #E5E5E5;
     padding: .2em 0;
-    position: fixed;
     background: white;
     width: 100%;
   }
@@ -608,7 +607,7 @@
   section.sec-direction {
     margin: 0;
     position: relative;
-    top: 90px;
+    top: 10px;
   }
   section.sec-direction .container {
     margin: 0 55px;
@@ -801,6 +800,7 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
     height: 70px;
+    resize: none;
   }
   .add-category .file-upload {
     display: -webkit-box;
@@ -1053,6 +1053,7 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
     height: 70px;
+    resize: none;
   }
   .add-category .file-upload {
     display: -webkit-box;
@@ -1306,6 +1307,7 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
     height: 70px;
+    resize: none;
   }
   .add-category .file-upload {
     display: -webkit-box;
@@ -1599,6 +1601,67 @@
   .failed-msg p span {
     font-weight: bold;
   }
+  .confirmation-msg {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 35%;
+    left: 7%;
+    background-color: white;
+    border: 1.3px solid white;
+    -webkit-box-shadow: 1px 1px 6px 2px #bebebe;
+            box-shadow: 1px 1px 6px 2px #bebebe;
+    padding: 1em 0;
+    width: 85%;
+  }
+  .confirmation-msg .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 1em;
+  }
+  .confirmation-msg .container p {
+    font-size: .9em;
+    text-align: left;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #bebebe;
+  }
+  .confirmation-msg .container p span {
+    color: #fd822f;
+    font-size: .65em;
+  }
+  .confirmation-msg .container form {
+    text-align: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: .3em 1em;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .confirmation-msg .container form button {
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: .5em .8em;
+    margin: 0 0.3em;
+  }
+  .confirmation-msg .container form button:hover {
+    cursor: pointer;
+  }
+  .confirmation-msg .container form .cancel-cta {
+    background-color: #1D2A38;
+  }
+  .confirmation-msg .container form .ok-cta {
+    background-color: #FF6600;
+  }
 }
 
 @media screen and (min-width: 691px) and (max-width: 950px) {
@@ -1764,6 +1827,67 @@
   }
   .failed-msg p span {
     font-weight: bold;
+  }
+  .confirmation-msg {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 35%;
+    left: 7%;
+    background-color: white;
+    border: 1.3px solid white;
+    -webkit-box-shadow: 1px 1px 6px 2px #bebebe;
+            box-shadow: 1px 1px 6px 2px #bebebe;
+    padding: 1em 0;
+    width: 85%;
+  }
+  .confirmation-msg .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 1em;
+  }
+  .confirmation-msg .container p {
+    font-size: .9em;
+    text-align: left;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #bebebe;
+  }
+  .confirmation-msg .container p span {
+    color: #fd822f;
+    font-size: .65em;
+  }
+  .confirmation-msg .container form {
+    text-align: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: .3em 1em;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .confirmation-msg .container form button {
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: .5em .8em;
+    margin: 0 0.3em;
+  }
+  .confirmation-msg .container form button:hover {
+    cursor: pointer;
+  }
+  .confirmation-msg .container form .cancel-cta {
+    background-color: #1D2A38;
+  }
+  .confirmation-msg .container form .ok-cta {
+    background-color: #FF6600;
   }
 }
 
@@ -1931,6 +2055,68 @@
   }
   .failed-msg p span {
     font-weight: bold;
+  }
+  .confirmation-msg {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 35%;
+    left: 7%;
+    background-color: white;
+    border: 1.3px solid white;
+    -webkit-box-shadow: 1px 1px 6px 2px #bebebe;
+            box-shadow: 1px 1px 6px 2px #bebebe;
+    padding: 1em 0;
+    width: 85%;
+    white-space: wrap;
+  }
+  .confirmation-msg .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 1em;
+  }
+  .confirmation-msg .container p {
+    font-size: .9em;
+    text-align: left;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #bebebe;
+  }
+  .confirmation-msg .container p span {
+    color: #fd822f;
+    font-size: .65em;
+  }
+  .confirmation-msg .container form {
+    text-align: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: .3em 1em;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .confirmation-msg .container form button {
+    border-radius: 5px;
+    color: white;
+    border: none;
+    padding: .5em .8em;
+    margin: 0 0.3em;
+  }
+  .confirmation-msg .container form button:hover {
+    cursor: pointer;
+  }
+  .confirmation-msg .container form .cancel-cta {
+    background-color: #1D2A38;
+  }
+  .confirmation-msg .container form .ok-cta {
+    background-color: #FF6600;
   }
 }
 

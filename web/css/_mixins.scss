@@ -50,7 +50,7 @@
                     font-size: .9em;
                     h4 {
                         margin: 0;
-                        // white-space: nowrap;
+                        white-space: nowrap;
                         &:hover {
                             color: $secondary-color;
                             cursor: pointer;
@@ -322,7 +322,10 @@
                 text-align: left;
                 padding-bottom: 1em;
                 border-bottom: 1px solid #bebebe;
-                white-space: nowrap;
+                span {
+                    color: #fd822f;
+                    font-size: .65em;
+                }
             }
             form {
                 text-align: right;

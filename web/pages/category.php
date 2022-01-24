@@ -1,5 +1,6 @@
 <?php 
     session_start();
+
  // Check if the user is already logged in, if yes then redirect him to welcome page
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         header("location: login.php");
@@ -54,7 +55,7 @@
                         <input class="input-search" type="text" name="search" placeholder="Search here...">
                         <span class="iconify" data-icon="el:search" style="color: #888;"></span>
                     </form>
-                    <img class="pr-admin" src="../images/user_.jpg" alt="">
+                    <a href="../logoutAdmin.php"><span class="iconify" data-icon="ls:logout" style="color: #ff9a62;"></span></a>
                 </div>
             </div>
         </div>
@@ -94,13 +95,13 @@
         <div class="logo-shop">
             <img src="../images/logo-v2.0.png" alt="logo">
         </div>
-        <h4>Please fill this form for add a category</h4>
-        <form action="" method="post">
+        <h4 id="heading">Please fill this form for add a category</h4>
+        <form action="./category.php" method="POST">
             <div class="div">
-                <input required name="_name" type="text" placeholder="Category name...">
+                <input required name="_name" type="text" id="catgName" placeholder="Category name...">
             </div>
             <div class="div">
-                <textarea required name="_description" id="" cols="30" rows="10" placeholder="Description..."></textarea>
+                <textarea required name="_description" id="catgDesc" placeholder="Description..."></textarea>
             </div>
     
             <div class="file-upload">
@@ -121,10 +122,23 @@
             </div>
             <div class="btns">
                 <button type="reset">Reset</button>
-                <button name="submit_category" type="submit">Submit</button>
+                <button id="updateBtn" type="submit">Submit</button>
             </div>
         </form>
-    </section> 
+    </section>
+    
+    <section id="confirm-form" class="disabled-form">
+        <div class="container">
+                <p>
+                    Are you sure you want to delete this category ? <br> <span>(All products belong to this category will be deleted).</span>
+                </p>
+            <form action="./category.php" method="post">
+                <button class="cancel-cta" onclick="">Cancel</button>
+                <button id="deleteBtn" class="ok-cta" name="delete-category" type="submit">Confirm</button>
+            </form>
+        </div>
+    </section>
+    
     <section id="categories" class="all-items-categories">
         <?php 
         foreach ($allCategories as $category) {
@@ -145,7 +159,7 @@
                 </div>
                 <div class="see_more">
                     <button onclick="dispDelete(\''.$category["id_category"].'\');" value="'.$category["id_category"].'"> Remove</button>
-                    <button onclick="dispFormEdit(\''.$category["_name"].'\',\''.$category["_description"].'\');"> Update</button>
+                    <button onclick="dispUpdate_catg(\''.$category["id_category"].'\',\''.$category["_name"].'\',\''.$category["_description"].'\');"> Update</button>
                 </div> 
             </div> ';
         }
@@ -156,19 +170,8 @@
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <script src="../js/imageInput.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/catg_function.js"></script>
     <script type="module" src="../js/category.js"></script>
-
-    <script>
-        const ADD_FORM_ctg = document.getElementById('add-category-form');
-        const CLOSE_FOR = document.getElementById('close-form');
-
-            function displayForm_category() {
-                ADD_FORM_ctg.className = "add-category";
-            }
-            CLOSE_FOR.addEventListener('click' , () => {
-                ADD_FORM_ctg.className = "disabled-form" ;
-            });
-    </script>
     
 </body>
 </html>

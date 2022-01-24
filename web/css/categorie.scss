@@ -86,6 +86,9 @@
     .failed-msg {
         @include style-msg(135px,.6em,90%,#f9423c,#ffebea);
     }
+    .confirmation-msg {
+        @include confirm-msg(35%,7%,85%);
+    }
 }
 
 // medium desktop ...
@@ -172,6 +175,9 @@
     }
     .failed-msg {
         @include style-msg(135px,.6em,50%,#f9423c,#ffebea);
+    }
+    .confirmation-msg {
+        @include confirm-msg(35%,7%,85%);
     }
 }
 
@@ -260,6 +266,10 @@
     }
     .failed-msg {
         @include style-msg(100px,.6em,45%,#f9423c,#ffebea);
+    }
+    .confirmation-msg {
+        @include confirm-msg(35%,7%,85%);
+        white-space: wrap;
     }
 }
 .disabled-form {

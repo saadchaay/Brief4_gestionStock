@@ -51,7 +51,7 @@
                         <input class="input-search" type="text" name="search" placeholder="Search here...">
                         <span class="iconify" data-icon="el:search" style="color: #888;"></span>
                     </form>
-                    <img class="pr-admin" src="../images/user_.jpg" alt="">
+                    <a href="../logoutAdmin.php"><span class="iconify" data-icon="ls:logout" style="color: #ff9a62;"></span></a>
                 </div>
             </div>
         </div>
@@ -173,8 +173,10 @@
             ?>
         </div>
     </section>
+
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <script src="../js/nav.js"></script>
     <script src="../js/details.js"></script>
+
 </body>
 </html>

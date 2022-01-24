@@ -1,22 +1,5 @@
 <?php
 
-    $CONNECTION_MYSQL = new PDO(
-        'mysql:host=localhost;dbname=gestionstock_db;charset=utf8',
-        'root',
-        '',
-        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-    );
-
-    //check cnx
-    function linked_DB($connection){
-        try {
-            $connection ;
-            echo "connection successfully" ;
-        } catch (Exception $th) {
-            die('Error:  '. $th->getMessage());
-        }
-    }
-
     //Get ID CATEGORY
     function GetID_CATEGORY($conn,$_name):int {
         $_Query = "SELECT id_category FROM category WHERE _name = :_NAME";
@@ -40,14 +23,14 @@
     }
     
     //CHECK SKU_identity
-    function CHECK_CATEGORY_byName($conn,$_name):bool {
+    function CHECK_CATEGORY_byID($conn,$_ID):bool {
         $count = 0;
-        $_Query = "SELECT _name FROM category";
+        $_Query = "SELECT id_category FROM category";
         $_QUERY_ = $conn->prepare($_Query);
         $_QUERY_->execute();
         $all_category = $_QUERY_->fetchAll();
-        foreach ($all_category as $name_) {
-            if($name_[0] == $_name){
+        foreach ($all_category as $id) {
+            if($id[0] == $_ID){
                 $count += 1 ;
             }
         }
@@ -60,7 +43,7 @@
 
     // get ALL CATEGORYs
     function GET_CATEGORY($conn) {
-        $getItems = 'SELECT * FROM category' ;
+        $getItems = 'SELECT * FROM category ORDER BY id_category DESC' ;
         $_Query = $conn->prepare($getItems);
         $_Query->execute();
         return $_Query->fetchAll();
@@ -84,14 +67,15 @@
     }
 
     // Edit a CATEGORY
-    function EDIT_CATEGORY($conn,$category):bool {
-        if(CHECK_CATEGORY_byName($conn,$category["_NAME"])){
-            $_Query = "UPDATE category SET  `image` = :IMG, _name = :NAME_, _description = :DESC_ WHERE _name = :NAME_" ;
+    function EDIT_CATEGORY($conn,$category,$id):bool {
+        if(CHECK_CATEGORY_byID($conn,$id)){
+            $_Query = "UPDATE category SET  `image` = :IMG, _name = :NAME_, _description = :DESC_ WHERE id_category = :ID" ;
             $_QUERY_ = $conn->prepare($_Query);
             $_QUERY_->execute([
                 'NAME_' => $category["_NAME"] ,
                 'DESC_' => $category["_DESCRIPTION"] ,
-                'IMG' => $category["_IMAGE"]
+                'IMG' => $category["_IMAGE"],
+                'ID' => $id
             ]) or die(print_r($conn->errorInfo()));
             return true;
         } else {
@@ -100,11 +84,11 @@
     }
 
     //DELETE CATEGORY
-    function DELETE_CATEGORY($conn,$_name):bool {
-        if(CHECK_CATEGORY_byName($conn,$_name)) {
-            $_Query = "DELETE FROM category WHERE _name = :NAME_";
+    function DELETE_CATEGORY($conn,$id_catg):bool {
+        if(CHECK_CATEGORY_byID($conn,$id_catg)) {
+            $_Query = "DELETE FROM category WHERE id_category = :ID";
             $_QUERY_ = $conn->prepare($_Query);
-            $_QUERY_->execute([ "NAME_" => $_name ]) or die(print_r($conn->errorInfo()));
+            $_QUERY_->execute([ "ID" => $id_catg ]) or die(print_r($conn->errorInfo()));
             return true;
         } else {
             return false;

@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
@@ -30,13 +30,13 @@
                 <div id="navbar-content" class="close-nav">
                     <nav>
                         <ul id="navbar-list">
-                            <li class="dash_link"><a href="dashboard.php">
+                            <li><a active="true" href="dashboard.php">
                                 <span class="iconify" data-icon="carbon:dashboard-reference" ></span> <p>Dashboard</p></a>
                             </li>
                             <li><a href="category.php">
                                 <span class="iconify" data-icon="bx:bxs-category" ></span> <p>Category</p></a>
                             </li>
-                            <li><a active="true" href="product_list.php">
+                            <li><a href="product_list.php">
                                 <span class="iconify" data-icon="ci:list-checklist-alt" ></span> <p>Product list</p></a>
                             </li>
                             <li><a href="product_detail.php">
@@ -50,7 +50,7 @@
                         <input class="input-search" type="text" name="search" placeholder="Search here...">
                         <span class="iconify" data-icon="el:search" style="color: #888;"></span>
                     </form>
-                    <img class="pr-admin" src="../images/user_.jpg" alt="">
+                    <a href="../logoutAdmin.php"><span class="iconify" data-icon="ls:logout" style="color: #ff9a62;"></span></a>
                 </div>
             </div>
         </div>
@@ -65,22 +65,25 @@
     <section class="statistic">
         <div class="container">
             <div class="part-div">
-                <h3>Categories</h3>
+                <h3>Total Categories</h3>
                 <p><?php echo "234"; ?></p>
             </div>
             <div class="part-div">
-                <h3>Products</h3>
+                <h3>Total Products</h3>
                 <p><?php echo "34"; ?></p>
             </div>
             <div class="part-div">
-                <h3>Orders</h3>
+                <h3>Total Orders</h3>
                 <p><?php echo "234"; ?></p>
             </div>
             <div class="part-div">
-                <h3>Revenue</h3>
+                <h3>All Revenue</h3>
                 <p><?php echo '$ 3290'; ?></p>
             </div>
         </div>
     </section>
+
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <script src="../js/nav.js"></script>
 </body>
 </html>

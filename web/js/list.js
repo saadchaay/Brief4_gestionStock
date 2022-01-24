@@ -1,4 +1,5 @@
 import { STYLE_BUTTONS_RE, in_out_Stock } from "./functions.js";
+
 // VARIABLES::
     const stock_status = document.getElementsByClassName('stock-status');
     const event_cta = document.getElementsByClassName('bottom-side');

@@ -42,6 +42,10 @@ $font:  'Poppins';
                         color: white;
                         font-weight: bold;
                         font-family: $font;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: orangered;
+                        }
                     }
                     input {
                         padding-left: 1em;
@@ -118,6 +122,10 @@ $font:  'Poppins';
                         color: white;
                         font-weight: bold;
                         font-family: $font;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: orangered;
+                        }
                     }
                     input {
                         padding-left: 2em;
@@ -187,7 +195,6 @@ $font:  'Poppins';
                     }
                     input {
                         padding-left: 2em;
-                        // &[type="text"]{
                         width: 90%;
                         height: 50px;
                         border-radius: 55px;
@@ -195,7 +202,6 @@ $font:  'Poppins';
                         background-color: #F2F2F2;
                         color: black;
                         font-family: $font;
-                        // }
                     }
                     button {  
                         width: 60%;
@@ -206,6 +212,10 @@ $font:  'Poppins';
                         color: white;
                         font-weight: bold;
                         font-family: $font;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: orangered;
+                        }
                     }
                     ::placeholder {
                         color: #898989;

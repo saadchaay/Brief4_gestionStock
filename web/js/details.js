@@ -1,4 +1,3 @@
-
 // VARIABLES::
     const _status = document.getElementById('status-stock');
     const _btns = document.querySelectorAll('button[type="submit"]');
@@ -20,11 +19,11 @@
     }
 
 // Remove, Edit buttons color FUNCTION::
-    function REMOVE_EDIT_btn(param) {
+    function STYLE_BUTTONS_RE(param) {
         param[0].setAttribute('style','background-color: #FF6600;');
         param[1].setAttribute('style','background-color: #1D2A38;');
     }
 
 //  CALL FUNCTIONS::
 in_out_Stock(_status);
-REMOVE_EDIT_btn(_btns);
+STYLE_BUTTONS_RE(_btns);

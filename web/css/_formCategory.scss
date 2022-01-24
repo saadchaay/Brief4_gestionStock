@@ -1,4 +1,5 @@
 @import "mixins" ;
+
 // mobile 
 @media screen and (min-width: 350px) and (max-width: 690px) {
     .add-category {
@@ -51,6 +52,7 @@
         textarea {
             @include form-control(3em,81.5%) ;
             height: 70px;
+            resize: none;
         }
         .file-upload {
             @include custom-file(84%,1.5em);
@@ -142,6 +144,7 @@
         textarea {
             @include form-control(3em,90%) ;
             height: 70px;
+            resize: none;
         }
         .file-upload {
             @include custom-file(90%,1.6em);
@@ -234,6 +237,7 @@
         textarea {
             @include form-control(3em,90%) ;
             height: 70px;
+            resize: none;
         }
         .file-upload {
             @include custom-file(90%,1.6em);
