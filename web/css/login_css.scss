@@ -49,7 +49,7 @@ $font:  'Poppins';
                     }
                     input {
                         padding-left: 1em;
-                        &[type="text"]{
+                        
                         width: 100%;
                         height: 40px;
                         border-radius: 55px;
@@ -57,7 +57,7 @@ $font:  'Poppins';
                         background-color: #F2F2F2;
                         color: black;
                         font-family: $font;
-                        }
+                        
                     }
                     ::placeholder {
                         color: #898989;
@@ -129,7 +129,6 @@ $font:  'Poppins';
                     }
                     input {
                         padding-left: 2em;
-                        &[type="text"]{
                         width: 90%;
                         height: 50px;
                         border-radius: 55px;
@@ -137,7 +136,7 @@ $font:  'Poppins';
                         background-color: #F2F2F2;
                         color: black;
                         font-family: $font;
-                        }
+                        
                     }
                     ::placeholder {
                         color: #898989;

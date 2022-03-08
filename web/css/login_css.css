@@ -68,8 +68,6 @@
   }
   section.login-part .container .div_form form input {
     padding-left: 1em;
-  }
-  section.login-part .container .div_form form input[type="text"] {
     width: 100%;
     height: 40px;
     border-radius: 55px;
@@ -182,8 +180,6 @@
   }
   section.login-part .container .div_form form input {
     padding-left: 2em;
-  }
-  section.login-part .container .div_form form input[type="text"] {
     width: 90%;
     height: 50px;
     border-radius: 55px;

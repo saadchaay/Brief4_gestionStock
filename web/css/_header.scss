@@ -28,6 +28,12 @@
                         height: 35px;
                     }
                 }
+                .iconify {
+                    width: 20px;
+                    height: 20px;
+                    margin: .5em;
+                    display: inline;
+                }
                 .right-side {
                     display: flex;
                     justify-content: center;
@@ -165,6 +171,12 @@
                         display: inline;
                     }
                 }
+                .iconify {
+                    width: 20px;
+                    height: 20px;
+                    margin: .5em;
+                    display: inline;
+                }
                 .close-nav {
                     width: auto;
                     box-shadow: none;
@@ -281,6 +293,12 @@
                     .input-search {
                         display: inline;
                     }
+                }
+                .iconify {
+                    width: 20px;
+                    height: 20px;
+                    margin: .5em;
+                    display: inline;
                 }
                 .close-nav {
                     flex: 8;

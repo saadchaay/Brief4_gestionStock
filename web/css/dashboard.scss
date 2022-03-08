@@ -13,10 +13,12 @@
             margin-top: 2em;
             .part-div {
                 margin: .5em 0;
-                text-align: center;
                 width: 80%;
                 background-color: white;
                 box-shadow: 2px 2px 7px 2px #bebebe;
+                h3, p {
+                    text-align: center;
+                }
             }
         }
     }
@@ -33,6 +35,9 @@
                 width: 20%;
                 background-color: white;
                 box-shadow: 2px 2px 3px 6px #bebebe;
+                h3, p {
+                    text-align: center;
+                }
             }
         }
     }
@@ -49,6 +54,9 @@
                 width: 20%;
                 background-color: white;
                 box-shadow: 2px 2px 3px 6px #bebebe;
+                h3, p {
+                    text-align: center;
+                }
             }
         }
     }

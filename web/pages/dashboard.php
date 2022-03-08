@@ -50,8 +50,8 @@
                         <input class="input-search" type="text" name="search" placeholder="Search here...">
                         <span class="iconify" data-icon="el:search" style="color: #888;"></span>
                     </form>
-                    <a href="../logoutAdmin.php"><span class="iconify" data-icon="ls:logout" style="color: #ff9a62;"></span></a>
                 </div>
+                <a href="../logoutAdmin.php"><span class="iconify" data-icon="ls:logout" style="color: #ff9a62;"></span></a>
             </div>
         </div>
         <div class="search-form">

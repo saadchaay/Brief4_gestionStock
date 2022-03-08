@@ -18,14 +18,14 @@
     );
 
 
-    $allAdmin = array(
-    );
+    $allAdmin = array();
 
     foreach ($admins as $admin) {
         $temp['username'] = $admin['username'];
         $temp['password'] = $admin['password'];
         array_push($allAdmin,$temp);
     }
+    // print_r($allAdmin);
 
     if(isset($_POST['check-login'])){
         for ($i=0; $i < count($allAdmin); $i++) {

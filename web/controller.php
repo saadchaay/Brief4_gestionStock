@@ -106,27 +106,41 @@ include 'connection.php' ;
 
         // UPDATE product
         if(isset($_POST["update-product"])){
-            $itemData = array(
-                "SKU_identity" => $_POST['sku_identity'],
-                "_NAME" => $_POST['_name'],
-                "_DESCRIPTION" => $_POST['_description'],
-                "_QUANTITY" => $_POST['_quantity'],
-                "_PRICE" => $_POST['_price'],
-                "_STATUS" => $_POST['status_stock'],
-                "_CATEGORY" => $_POST['_category'],
-                "_IMAGE" => $_POST['_image']      
-            );
-            if(EDIT_PRODUCT($CONNECTION_MYSQL,$itemData)){
-                echo "<div class='success-msg'>
-                        <span class='iconify' data-icon='ion:checkmark-done-circle-sharp' style='color: #4ecb71;'></span>
-                        <p><span> SUCCESS! </span>  Your product has been updated successfully.</p>
-                    </div>" ;
+            if(!empty($_POST['status_stock'])){
+                $itemData = array(
+                    "SKU_identity" => $_POST['sku_identity'],
+                    "_NAME" => $_POST['_name'],
+                    "_DESCRIPTION" => $_POST['_description'],
+                    "_QUANTITY" => $_POST['_quantity'],
+                    "_PRICE" => $_POST['_price'],
+                    "_STATUS" => $_POST['status_stock'],
+                    "_CATEGORY" => $_POST['_category'],
+                    "_IMAGE" => $_POST['_image']      
+                );
             } else {
-                echo "<div class='failed-msg'>
-                        <span class='iconify' data-icon='ci:error' style='color: #f9423c;'></span>
-                        <p><span> ERROR ! </span>  This product doesn't exists.</p>
-                    </div>" ;
-            } 
+                $itemData = array(
+                    "SKU_identity" => $_POST['sku_identity'],
+                    "_NAME" => $_POST['_name'],
+                    "_DESCRIPTION" => $_POST['_description'],
+                    "_QUANTITY" => $_POST['_quantity'],
+                    "_PRICE" => $_POST['_price'],
+                    "_STATUS" => 1,
+                    "_CATEGORY" => $_POST['_category'],
+                    "_IMAGE" => $_POST['_image']      
+                );
+            }
+                if(EDIT_PRODUCT($CONNECTION_MYSQL,$itemData)){
+                    echo "<div class='success-msg'>
+                            <span class='iconify' data-icon='ion:checkmark-done-circle-sharp' style='color: #4ecb71;'></span>
+                            <p><span> SUCCESS! </span>  Your product has been updated successfully.</p>
+                        </div>" ;
+                } else {
+                    echo "<div class='failed-msg'>
+                            <span class='iconify' data-icon='ci:error' style='color: #f9423c;'></span>
+                            <p><span> ERROR ! </span>  This product doesn't exists.</p>
+                        </div>" ;
+                }
+            
         }
 
 ?>

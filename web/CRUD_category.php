@@ -41,6 +41,25 @@
         }
     }
 
+    //CHECK SKU_identity
+    function CHECK_CATEGORY_byName($conn,$_name):bool {
+        $count = 0;
+        $_Query = "SELECT _name FROM category";
+        $_QUERY_ = $conn->prepare($_Query);
+        $_QUERY_->execute();
+        $all_category = $_QUERY_->fetchAll();
+        foreach ($all_category as $catg) {
+            if($catg[0] == $_name){
+                $count += 1 ;
+            }
+        }
+        if($count == 0) {
+            return false ;
+        } else {
+            return true ;
+        }
+    }
+
     // get ALL CATEGORYs
     function GET_CATEGORY($conn) {
         $getItems = 'SELECT * FROM category ORDER BY id_category DESC' ;
