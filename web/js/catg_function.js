@@ -6,7 +6,7 @@ const _update = document.getElementById('updateBtn');
 const heading = document.getElementById('heading');
 const _delete = document.getElementById('deleteBtn');
 const form_delete = document.getElementById('confirm-form');
-
+const btn_reset = document.getElementById('resetBtn');
 
     function displayForm_category() {
         ADD_FORM_ctg.className = "add-category";
@@ -25,6 +25,7 @@ const form_delete = document.getElementById('confirm-form');
         heading.textContent = "Please fill this form for update a category";
         _update.setAttribute('name','update-category');
         _update.setAttribute('value',id);
+        btn_reset.setAttribute('onclick','resetAll()');
     }
 
     function dispDelete(id_catg){
@@ -35,3 +36,8 @@ const form_delete = document.getElementById('confirm-form');
     CLOSE_FOR.addEventListener('click' , () => {
         ADD_FORM_ctg.className = "disabled-form" ;
     });
+
+    function resetAll() {
+        catgDesc.textContent = "" ;
+        catgName.setAttribute('value', "");
+    }

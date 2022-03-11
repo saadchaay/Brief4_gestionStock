@@ -8,6 +8,7 @@ const input_quantity = document.getElementById('_quantity');
 const input_catg = document.getElementById('_category');
 const heading = document.getElementById('heading');
 const btn_update = document.getElementById('btn-submit');
+const btn_reset = document.getElementById('reset-btn');
 const form_delete = document.getElementById('confirm-form');
 const btn_delete = document.getElementById('confirm-msg');
 
@@ -36,11 +37,12 @@ const btn_delete = document.getElementById('confirm-msg');
         input_desc.textContent = description ;
         input_price.setAttribute('value',price);
         input_quantity.setAttribute('value',quantity);
-        input_quantity.setAttribute('value',quantity);
+        // input_quantity.setAttribute('value',quantity);
         heading.textContent = "Please change this data form for update a product";
         btn_update.textContent = "Update";
         input_catg.textContent = catg;
         btn_update.setAttribute('name','update-product');
+        btn_reset.setAttribute('onclick','resetAll()');
     }
 
     function displayDelete(sku_id){
@@ -61,4 +63,12 @@ const btn_delete = document.getElementById('confirm-msg');
       let productNameRgx = /^[a-zA-Z]$/ ; 
       var res = productNameRgx.test(productName);
       // alert("product name: ", res);
+    }
+
+    function resetAll() {
+        input_name.setAttribute('value',"");
+        input_desc.textContent = "" ;
+        input_price.setAttribute('value',"");
+        input_quantity.setAttribute('value',"");
+        input_quantity.setAttribute('value',"");
     }

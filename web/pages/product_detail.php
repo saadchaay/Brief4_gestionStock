@@ -128,49 +128,12 @@
                     </div>' ;
                 } 
                 else {
-                    echo '<div class="top-side">
-                        <h4>Product detail</h4>
-                        <div class="line-title"></div>
-                        <img class="product-img" src="../images/veggies 2.jpg" alt="">
-                        <h4>veggies 2</h4>
-                    </div>
-                    <div class="bottom-side">
-                        <div class="product-info">
-                            <h5>Product info</h5>
-                            <table>
-                                <tr>
-                                    <th>Price</th>
-                                    <td>$45.99</td>
-                                </tr>
-                                <tr>
-                                    <th>Product category</th>
-                                    <td>Veg</td>
-                                </tr>
-                                <tr>
-                                    <th>Avaibility</th>
-                                    <td><span id="status-stock">Out stock</span></td>
-                                </tr>
-                                <tr>
-                                    <th>SKU identity</th>
-                                    <td>67098</td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <form action=""><button type="submit">Remove</button></form>
-                                    </th>
-                                    <td>
-                                        <form action=""><button type="submit">Edit</button></form>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="product-desc">
-                            <h5>Product description</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book type and scrambled it to make a type specimen book.</p>
-                        </div>
-                    </div> ' ;
+                    echo '<div class="alert alert-warning" role="alert">
+                           <p>No Product Selected To Show! <a href="dashboard.php">Go back Home</a></p>
+                        </div>' ;
                 }  
             ?>
+            
         </div>
     </section>
 

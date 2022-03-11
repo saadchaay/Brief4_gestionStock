@@ -121,7 +121,7 @@
                 </div>
             </div>
             <div class="btns">
-                <button type="reset">Reset</button>
+                <button id="resetBtn" type="reset">Reset</button>
                 <button id="updateBtn" type="submit">Submit</button>
             </div>
         </form>

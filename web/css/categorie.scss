@@ -177,7 +177,7 @@
         @include style-msg(135px,.6em,50%,#f9423c,#ffebea);
     }
     .confirmation-msg {
-        @include confirm-msg(35%,7%,85%);
+        @include confirm-msg(35%,13%,75%);
     }
 }
 
@@ -268,7 +268,7 @@
         @include style-msg(100px,.6em,45%,#f9423c,#ffebea);
     }
     .confirmation-msg {
-        @include confirm-msg(35%,7%,85%);
+        @include confirm-msg(190px,25%,50%);
         white-space: wrap;
     }
 }

@@ -1850,13 +1850,13 @@
     position: -webkit-sticky;
     position: sticky;
     top: 35%;
-    left: 7%;
+    left: 13%;
     background-color: white;
     border: 1.3px solid white;
     -webkit-box-shadow: 1px 1px 6px 2px #bebebe;
             box-shadow: 1px 1px 6px 2px #bebebe;
     padding: 1em 0;
-    width: 85%;
+    width: 75%;
   }
   .confirmation-msg .container {
     display: -webkit-box;
@@ -2077,14 +2077,14 @@
   .confirmation-msg {
     position: -webkit-sticky;
     position: sticky;
-    top: 35%;
-    left: 7%;
+    top: 190px;
+    left: 25%;
     background-color: white;
     border: 1.3px solid white;
     -webkit-box-shadow: 1px 1px 6px 2px #bebebe;
             box-shadow: 1px 1px 6px 2px #bebebe;
     padding: 1em 0;
-    width: 85%;
+    width: 50%;
     white-space: wrap;
   }
   .confirmation-msg .container {

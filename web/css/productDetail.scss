@@ -27,6 +27,9 @@
             }
         }
     }
+    .alert {
+        @include alert ;
+    }
 }
 
 // medium desktop ...
@@ -55,6 +58,9 @@
             }
         }
     }
+    .alert {
+        @include alert ;
+    }
 }
 
 // large Desktop
@@ -81,5 +87,8 @@
                 }
             }
         }
+    }
+    .alert {
+        @include alert ;
     }
 }

@@ -134,7 +134,8 @@
                 </div>
             </div>
             <div class="btns">
-                <button type="reset">Reset</button>
+               
+                <button id="reset-btn" type="reset">Reset</button> 
                 <button id="btn-submit" type="submit">Submit</button>
             </div>
         </form>
